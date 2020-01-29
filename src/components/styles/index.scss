@@ -1,204 +1,207 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-@import './variables';
-@import './mixins';
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import "./variables";
+@import "./mixins";
 
 * {
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-family: 'Montserrat',sans-serif;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
+  font-family: "Montserrat", sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-nav{
-    display:flex;
-    width: 100%;
-    height: 4rem;
-    align-items: center;
-    justify-content: space-between;
-    ul {
-        list-style: none;
-        display: inline-flex;
-        li {
-            font-family: 'Muli',sans-serif;
-            font-weight: 600;
-            margin: 0 0.3rem;
-        }
-        a {
-            font-size: 1rem;
-            text-decoration: none;
-            color: $txt-prim-color;
-        }
-        a:hover {
-            color: $txt-second-color;
-        }
+nav {
+  display: flex;
+  width: 100%;
+  height: 4rem;
+  align-items: center;
+  justify-content: space-between;
+  ul {
+    list-style: none;
+    display: inline-flex;
+    li {
+      font-family: "Muli", sans-serif;
+      font-weight: 600;
+      margin: 0 0.3rem;
+    }
+    a {
+      font-size: 1rem;
+      text-decoration: none;
+      color: $txt-prim-color;
+    }
+    a:hover {
+      color: $txt-second-color;
+    }
 
-        .active::after{
-            display: block;
-            content: '';
-            width: 2rem;
-            height: .3rem;
-            margin: 0.2rem auto 0;
-            background: $footer-bg;
-        }
+    .active::after {
+      display: block;
+      content: "";
+      width: 2rem;
+      height: 0.3rem;
+      margin: 0.2rem auto 0;
+      background: $footer-bg;
     }
-    .theke {
-        display: inline-block;
-        transition: .2s ease-out;
-    }
-    .theke:hover{
-        opacity: .6;
-    }
+  }
+  .theke {
+    display: inline-block;
+    transition: 0.2s ease-out;
+  }
+  .theke:hover {
+    opacity: 0.6;
+  }
 }
 
 .container {
-    @include container($main:true);
+  @include container($main: true);
 }
 
 .footer {
-    background: $footer-bg;
-    width: 100%;
-    .fgrid {
-        @include container($main:false);
-        padding-top: 3.5rem;
-        padding-bottom: 3.5rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 1rem;
-        align-items: start;
-        justify-content: center;
+  background: $footer-bg;
+  width: 100%;
+  .fgrid {
+    @include container($main: false);
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    align-items: start;
+    justify-content: center;
+  }
+  .logo {
+    width: fit-content;
+    margin: auto;
+    img {
+      width: 10rem;
+      opacity: 0.5;
     }
-    .logo {
-        width: fit-content;
-        margin: auto;
-        img {
-            width: 10rem;
-            opacity: .5;
-        }
+  }
+  .apropos,
+  .contact {
+    display: flex;
+    flex-direction: column;
+    color: $txt-second-color;
+    h3 {
+      font-family: "Muli", sans-serif;
+      font-size: 1.15rem;
+      margin-bottom: 1rem;
+      color: $txt-prim-color;
     }
-    .apropos,.contact {
-        display: flex;
-        flex-direction: column;
-        color: $txt-second-color;
-        h3 {
-            font-family: 'Muli',sans-serif;
-            font-size: 1.15rem;
-            margin-bottom: 1rem;
-            color: $txt-prim-color;
-        }
-        p,span {
-            text-transform: lowercase;
-            font-size: .90rem;
-            line-height: 1.5;
-        }
-        a {
-            color:$txt-link-color;
-            font-weight: 600;
-        }
-        a:hover{
-            color:#4e7cc2
-        }
+    p,
+    span {
+      text-transform: lowercase;
+      font-size: 0.9rem;
+      line-height: 1.5;
     }
-    .social {
-        display: flex;
-        margin-top: .3rem;
-        opacity: .4;
-        span {
-            width: 1.3rem;
-            margin-right: 1rem;
-        }
+    a {
+      color: $txt-link-color;
+      font-weight: 600;
     }
+    a:hover {
+      color: #4e7cc2;
+    }
+  }
+  .social {
+    display: flex;
+    margin-top: 0.3rem;
+    opacity: 0.4;
+    span {
+      width: 1.3rem;
+      margin-right: 1rem;
+    }
+  }
 }
 
 .section {
-    margin: 0 7rem 10rem;
-    h3 {
-        margin: 0px auto 3rem;
-        font-size: 1.35rem;
-        text-align: center;
-        font-family: 'Muli',sans-serif;
-        color: $txt-prim-color;  
+  margin: 0 7rem 10rem;
+  h3 {
+    margin: 0px auto 3rem;
+    font-size: 1.35rem;
+    text-align: center;
+    font-family: "Muli", sans-serif;
+    color: $txt-prim-color;
+  }
+  .grid-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap: 5rem;
+    grid-column-gap: 1rem;
+    width: 100%;
+    align-items: center;
+    .about-img {
+      width: 350px;
+      height: 280px;
+      background-size: cover;
+      background-position: left;
+      background-repeat: no-repeat;
+      border-radius: 0.5rem;
+      margin: 0 1rem;
+      box-shadow: 1px 1px 10px #0000007d;
     }
-    .grid-table {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-row-gap: 5rem;
-        grid-column-gap: 1rem;
-        width: 100%;
-        align-items: center;
-        .about-img {
-            width: 350px;
-            height: 280px;
-            background-size: cover;
-            background-position: left;
-            background-repeat: no-repeat;
-            border-radius: .5rem;
-            margin: 0 1rem;
-            box-shadow: 1px 1px 10px #0000007d;
-        }
-        p {
-            font-size: .9rem;
-            text-align: justify;
-            line-height: 1.5;
-            color: $txt-second-color;
-            text-transform: lowercase;
-        }
-        .right {
-            justify-self: right;
-        } 
-        .left {
-            justify-self: left;
-        }
+    p {
+      font-size: 0.9rem;
+      text-align: justify;
+      line-height: 1.5;
+      color: $txt-second-color;
+      text-transform: lowercase;
     }
+    .right {
+      justify-self: right;
+    }
+    .left {
+      justify-self: left;
+    }
+  }
 }
-
 
 @media (max-width: 1200px) {
-    .container{
-        width: 90vw;
-        min-height: 100vh;
-    }
-    .section{
-        margin: 0 0 10rem;
-    }
+  .container {
+    width: 90vw;
+    min-height: 100vh;
+  }
+  .section {
+    margin: 0 0 10rem;
+  }
 }
 
-@media (max-width: 900px){
-    .about-img{
-        width: 90% !important;
-        height: 250px !important;
-        margin: 0 0 !important;
-    }
+@media (max-width: 900px) {
+  .about-img {
+    width: 90% !important;
+    height: 250px !important;
+    margin: 0 0 !important;
+  }
 }
 
 @media (max-width: 700px) {
-    .section{
-        .grid-table{
-            grid-column-gap: 0;
-            grid-row-gap: .5rem;
-            grid-template-areas:"img1 img1"
-                                "txt1 txt1"
-                                "img2 img2"
-                                "txt2 txt2";                   
-            .left,.right {
-                justify-self: center;
-            }
-            p{
-                padding: 1.3rem 0;
-            }
-        }             
-        h3{
-            margin-bottom: 2rem;
-        }
+  .section {
+    .grid-table {
+      grid-column-gap: 0;
+      grid-row-gap: 0.5rem;
+      grid-template-areas:
+        "img1 img1"
+        "txt1 txt1"
+        "img2 img2"
+        "txt2 txt2";
+      .left,
+      .right {
+        justify-self: center;
+      }
+      p {
+        padding: 1.3rem 0;
+      }
     }
+    h3 {
+      margin-bottom: 2rem;
+    }
+  }
 }

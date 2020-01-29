@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
-import img1 from "../assets/apropos-1.jpg"
-import img2 from "../assets/apropos-2.jpg"
+import img1 from "../../static/assets/apropos-1.jpg"
+import img2 from "../../static/assets/apropos-2.jpg"
 
 const Apropos = () => {
   return (
