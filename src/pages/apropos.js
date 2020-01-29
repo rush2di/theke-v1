@@ -9,8 +9,8 @@ const Apropos = () => {
       <div className="section">
         <h3>à propos de nous</h3>
         <div className="grid-table">
-          <img className="left" src={img1} alt="apropos1" />
-          <p>
+          <div className="left about-img" style={{backgroundImage:`url(${img1})`,gridArea: 'img1'}} alt="apropos1" />
+          <p style={{gridArea: 'txt1'}}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
             quas nobis possimus at! Corrupti illum laborum dignissimos eveniet
             quae temporibus, accusantium assumenda quaerat tempore natus
@@ -23,7 +23,7 @@ const Apropos = () => {
             a, rem possimus esse sit dignissimos ut eaque. Ipsum, labore? Minus,
             distinctio doloremque. Sunt, dicta tenetur.
           </p>
-          <p>
+          <p style={{gridArea: 'txt2'}}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. At illum
             nihil repellat assumenda dicta voluptate repudiandae nostrum quam
             necessitatibus, veritatis delectus facilis porro. Mollitia provident
@@ -35,7 +35,7 @@ const Apropos = () => {
             debitis, ratione quam sapiente. Laudantium vitae veniam, amet
             architecto error repudiandae! Nisi dolore reiciendis error id.
           </p>
-          <img className="right" src={img2} alt="apropos2" />
+          <div className="right about-img" style={{backgroundImage:`url(${img2})`,gridArea: 'img2'}} alt="apropos2" />
         </div>
       </div>
     </Layout>
