@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: rush2di/theke-v1
   branch: master
   publish_mode: editorial_workflow
   commit_messages:
