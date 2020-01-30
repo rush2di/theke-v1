@@ -6,6 +6,10 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata:{
+    title:'Theke',
+    developedBy: 'Rochdi Belhirch'
+  },
   plugins:[
     'gatsby-plugin-sass',
     'gatsby-plugin-netlify-cms'
