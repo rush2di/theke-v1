@@ -134,6 +134,9 @@ nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "img1 txt1"
+    "txt2 img2";
     grid-row-gap: 5rem;
     grid-column-gap: 1rem;
     width: 100%;
