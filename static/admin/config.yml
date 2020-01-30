@@ -14,9 +14,9 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/pages/blog"
+  - name: "articles"
+    label: "Articles"
+    folder: "src/pages/articles"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -24,12 +24,31 @@ collections:
           label: "Template Key",
           name: "templateKey",
           widget: "hidden",
-          default: "blog-post",
+          default: "article-post",
         }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Titre", name: "titre", widget: "string" }
+      - { label: "Date de publication", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text" }
-      - { label: "Featured Post", name: "featuredpost", widget: "boolean" }
-      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "En vedette", name: "envedette", widget: "boolean" }
+      - { label: "Coverture", name: "coverture", widget: image }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
+      - {
+          label: 'Tags',
+          name: 'tags',
+          widget: 'relationKitchenSinkPost',
+          collection: 'posts',
+          searchFields: ['title', 'body'],
+          valueField: 'title',
+          multiple: true,
+        }
+
+  - name: 'tags'
+        label: 'Tags'
+        fields:
+          - name: tags
+            label: Tags
+            widget: list
+            fields:
+              - { label: 'tag', name: 'tag', widget: 'string'}
+
