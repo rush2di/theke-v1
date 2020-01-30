@@ -6,6 +6,14 @@ description: theke website test
 featuredpost: true
 featuredimage: /img/hal-gatewood-OgvqXGL7XO4-unsplash.jpg
 tags:
-  - theke
+  - theke blog
 ---
+hi there this is my first blog post hi there this is my first blog post hi there this is my first blog post hi there this is my first blog post hi there this is my first blog post hi there this is my first blog post hi there this is my first blog post!
+
+hi there this is my first blog post!
+
+hi there this is my first blog post!
+
+hi there this is my first blog post!
+
 hi there this is my first blog post!
