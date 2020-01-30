@@ -12,6 +12,13 @@ module.exports = {
   },
   plugins:[
     'gatsby-plugin-sass',
-    'gatsby-plugin-netlify-cms'
+    'gatsby-plugin-netlify-cms',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'uploads',
+        path: `${__dirname}/static/img`,
+      }
+    }
   ]
 }
