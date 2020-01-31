@@ -6,20 +6,20 @@
 
 module.exports = {
   /* Your site config here */
-  siteMetadata:{
-    title:'Theke',
-    developedBy: 'Rochdi Belhirch'
+  siteMetadata: {
+    title: "Theke",
+    developedBy: "Rochdi Belhirch",
   },
-  plugins:[
-    'gatsby-plugin-sass',
-    'gatsby-plugin-netlify-cms',
-    'gatsby-transformer-remark'
+  plugins: [
+    "gatsby-plugin-sass",
+    "gatsby-plugin-netlify-cms",
+    "gatsby-transformer-remark",
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'uploads',
+        name: "uploads",
         path: `${__dirname}/static/img`,
-      }
-    }
-  ]
+      },
+    },
+  ],
 }
