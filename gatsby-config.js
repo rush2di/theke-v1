@@ -13,13 +13,27 @@ module.exports = {
   plugins: [
     "gatsby-plugin-sass",
     "gatsby-plugin-netlify-cms",
-    "gatsby-transformer-remark",
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "uploads",
-        path: `${__dirname}/static/img`,
+        name: "articles",
+        path: `${__dirname}/static/articles`,
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/static/img`,
+        name: "images",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/static/tags`,
+        name: "tags",
+      },
+    },
+    "gatsby-transformer-remark",
   ],
 }

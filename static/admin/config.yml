@@ -10,7 +10,7 @@ public_folder: /img
 collections:
   - name: "articles"
     label: "Articles"
-    folder: "src/pages/articles"
+    folder: "static/articles"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -28,21 +28,24 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
       - {
-          label: 'Tags',
-          name: 'tags',
-          widget: 'relationKitchenSinkPost',
-          collection: 'posts',
-          searchFields: ['title', 'body'],
-          valueField: 'title',
+          label: "Tags",
+          name: "tags",
+          widget: "tagswidget",
+          collection: "tags",
+          displayFields: ["tags"],
+          valueField: "tag",
           multiple: true,
         }
-
-  - name: 'tags'
-        label: 'Tags'
+  - name: "tags"
+    label: "Tags"
+    folder: "static/tags"
+    create: true
+    identifier_field: "tags"
+    editor:
+      preview: false
+    fields:
+      - name: tags
+        label: Tags
+        widget: list
         fields:
-          - name: tags
-            label: Tags
-            widget: list
-            fields:
-              - { label: 'tag', name: 'tag', widget: 'string'}
-
+          - { label: "tag", name: "tag", widget: "string" }
