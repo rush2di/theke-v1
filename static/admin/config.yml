@@ -2,12 +2,6 @@ backend:
   name: github
   repo: rush2di/theke-v1
   branch: master
-  commit_messages:
-    create: "Create {{collection}} “{{slug}}”"
-    update: "Update {{collection}} “{{slug}}”"
-    delete: "Delete {{collection}} “{{slug}}”"
-    uploadMedia: "[skip ci] Upload “{{path}}”"
-    deleteMedia: "[skip ci] Delete “{{path}}”"
 
 publish_mode: editorial_workflow
 media_folder: static/img
