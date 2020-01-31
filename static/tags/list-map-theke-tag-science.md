@@ -1,6 +1,7 @@
 ---
 tags:
-  - tag: science
   - tag: biologie
+  - tag: science
+  - tag: astrobiologie
 ---
 
