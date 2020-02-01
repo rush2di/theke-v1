@@ -1,10 +1,10 @@
 ---
 templateKey: blog-post
-title: theke second post
+titre: 'theke post #2'
 date: 2020-01-30T19:02:39.830Z
 description: theke website test
-featuredpost: true
-featuredimage: /img/hal-gatewood-OgvqXGL7XO4-unsplash.jpg
+envedette: false
+coverture: /img/eren-arik-research.jpg
 tags:
   - theke
   - science
