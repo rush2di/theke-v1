@@ -27,4 +27,22 @@ collections:
       - { label: "En vedette", name: "envedette", widget: "boolean" }
       - { label: "Coverture", name: "coverture", widget: image }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list" }
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "relation",
+          collection: "collectionTags",
+          searchFields: ["tagName"],
+          valueField: "tagName",
+          multiple: true,
+        }
+
+  - name: "collectionTags"
+    label: "List des tags"
+    folder: "static/tagslist"
+    delete: false
+    editor:
+      preview: false
+    widget: "list"
+    fields:
+      - { label: "Nome du tag", name: "tagName", widget: "string" }
