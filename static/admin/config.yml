@@ -24,30 +24,41 @@ collections:
       - { label: "Titre", name: "titre", widget: "string" }
       - { label: "Date de publication", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text" }
-      - {
-          label: "Tags",
-          name: "tags",
-          widget: "relation",
-          collection: "collectionTags",
-          searchFields: ["tagsList"],
-          valueField: "tagName",
-          displayFields: ["tagsList"],
-          multiple: true,
-        }
-      - { label: "En vedette", name: "envedette", widget: "boolean" }
+      - name: tags
+        widget: select
+        multiple: true
+        min: 1
+        max: 5
+        options:
+          [
+            "science",
+            "biologie",
+            "astrologie",
+            "literature",
+            "physcique",
+            "chimie",
+            "technologie",
+            "environnement",
+            "informatique",
+            "biodiversite",
+            "société",
+            "culture",
+            "politiques",
+            "décoverte",
+            "exploration",
+          ]
+      # - { label: "En vedette", name: "envedette", widget: "boolean" }
       - { label: "Coverture", name: "coverture", widget: image }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  - name: "collectionTags"
-    label: "List des tags"
-    folder: "static/tagslist"
-    create: true
-    identifier_field: "tagsList"
-    delete: false
-    editor:
-      preview: false
-    widget: "list"
-    fields:
-      - name: "title"
-        label: "Tags"
-        widget: "string"
+collection:
+  - name: "enVedette"
+    label: "En vedette"
+    widget: "relation"
+    collection: "articles"
+    default: select
+    searchFields: ["titre"]
+    valueField: "titre"
+    multiple: true
+    min: 3
+    max: 3
