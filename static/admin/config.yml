@@ -46,11 +46,8 @@ collections:
     delete: false
     editor:
       preview: false
+    widget: "list"
     fields:
-      - name: "tagsList"
+      - name: "title"
         label: "Tags"
-        label_singular: "Tag"
-        widget: "list"
-        multiple: true
-        fields:
-          - { label: "Nome du tag", name: "tagName", widget: "string" }
+        widget: "string"
