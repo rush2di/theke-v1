@@ -24,9 +24,6 @@ collections:
       - { label: "Titre", name: "titre", widget: "string" }
       - { label: "Date de publication", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text" }
-      - { label: "En vedette", name: "envedette", widget: "boolean" }
-      - { label: "Coverture", name: "coverture", widget: image }
-      - { label: "Body", name: "body", widget: "markdown" }
       - {
           label: "Tags",
           name: "tags",
@@ -34,13 +31,16 @@ collections:
           collection: "collectionTags",
           searchFields: ["tagsList"],
           valueField: "tagName",
+          displayFields: ["tagsList"],
           multiple: true,
         }
+      - { label: "En vedette", name: "envedette", widget: "boolean" }
+      - { label: "Coverture", name: "coverture", widget: image }
+      - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "collectionTags"
     label: "List des tags"
     folder: "static/tagslist"
-    identifier_field: "tagsList"
     delete: false
     editor:
       preview: false
@@ -49,5 +49,6 @@ collections:
         label: "Tags"
         label_singular: "Tag"
         widget: "list"
+        multiple: true
         fields:
           - { label: "Nome du tag", name: "tagName", widget: "string" }
