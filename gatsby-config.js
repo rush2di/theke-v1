@@ -30,8 +30,8 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/static/tags`,
-        name: "tags",
+        path: `${__dirname}/static/tagslist`,
+        name: "tagslist",
       },
     },
     "gatsby-transformer-remark",

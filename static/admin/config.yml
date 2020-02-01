@@ -32,7 +32,7 @@ collections:
           name: "tags",
           widget: "relation",
           collection: "collectionTags",
-          searchFields: ["tagName"],
+          searchFields: ["tagsList"],
           valueField: "tagName",
           multiple: true,
         }
@@ -40,9 +40,14 @@ collections:
   - name: "collectionTags"
     label: "List des tags"
     folder: "static/tagslist"
+    identifier_field: "tagsList"
     delete: false
     editor:
       preview: false
-    widget: "list"
     fields:
-      - { label: "Nome du tag", name: "tagName", widget: "string" }
+      - name: "tagsList"
+        label: "Tags"
+        label_singular: "Tag"
+        widget: "list"
+        fields:
+          - { label: "Nome du tag", name: "tagName", widget: "string" }
