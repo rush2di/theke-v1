@@ -41,6 +41,8 @@ collections:
   - name: "collectionTags"
     label: "List des tags"
     folder: "static/tagslist"
+    create: true
+    identifier_field: "tagsList"
     delete: false
     editor:
       preview: false
