@@ -18,7 +18,7 @@ collections:
           label: "Template Key",
           name: "templateKey",
           widget: "hidden",
-          default: "article-post",
+          default: "blog-post",
         }
       - { label: "Titre", name: "titre", widget: "string" }
       - { label: "Date de publication", name: "date", widget: "datetime" }
@@ -27,25 +27,3 @@ collections:
       - { label: "Coverture", name: "coverture", widget: image }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
-      - {
-          label: "Tags",
-          name: "tags",
-          widget: "tagswidget",
-          collection: "tags",
-          displayFields: ["tags"],
-          valueField: "tag",
-          multiple: true,
-        }
-  - name: "tags"
-    label: "Tags"
-    folder: "static/tags"
-    create: true
-    identifier_field: "tags"
-    editor:
-      preview: false
-    fields:
-      - name: tags
-        label: Tags
-        widget: list
-        fields:
-          - { label: "tag", name: "tag", widget: "string" }
