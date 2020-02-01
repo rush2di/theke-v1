@@ -47,18 +47,31 @@ collections:
             "décoverte",
             "exploration",
           ]
-      # - { label: "En vedette", name: "envedette", widget: "boolean" }
       - { label: "Coverture", name: "coverture", widget: image }
       - { label: "Body", name: "body", widget: "markdown" }
 
-collection:
   - name: "enVedette"
     label: "En vedette"
-    widget: "relation"
-    collection: "articles"
-    default: select
-    searchFields: ["titre"]
-    valueField: "titre"
-    multiple: true
-    min: 3
-    max: 3
+    folder: "static/vedette"
+    identifier_field: selection
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - {
+          label: "Selection",
+          name: "selection",
+          widget: "hidden",
+          default: "posts en vedette",
+        }
+      - name: "title"
+        label: "Vedette"
+        widget: "relation"
+        collection: "articles"
+        default: select
+        searchFields: ["titre"]
+        valueField: "titre"
+        multiple: true
+        min: 3
+        max: 3
