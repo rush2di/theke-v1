@@ -1,6 +1,4 @@
 ---
-tagsList:
-  - tagName: science
-  - tagName: biologie
+tagName: science
 ---
 
