@@ -13,6 +13,7 @@ collections:
     folder: "static/articles"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: titre
     fields:
       - {
           label: "Template Key",

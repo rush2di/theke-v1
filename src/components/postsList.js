@@ -9,11 +9,11 @@ const PostsList = () => {
         edges {
           node {
             frontmatter {
-              title
+              titre
               date
               description
-              featuredpost
-              featuredimage
+              envedette
+              coverture
             }
           }
         }
@@ -25,9 +25,9 @@ const PostsList = () => {
     return (
       <li key={edge.node.id}>
         <ArticlePost
-          title={edge.node.frontmatter.title}
+          title={edge.node.frontmatter.titre}
           date={edge.node.frontmatter.date}
-          cover={edge.node.frontmatter.featuredimage}
+          cover={edge.node.frontmatter.coverture}
           description={edge.node.frontmatter.description}
         />
       </li>
