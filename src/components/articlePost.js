@@ -5,7 +5,10 @@ const ArticlePost = ({ title, date, cover, description }) => {
     <div>
       <h1>{title}</h1>
       <blockquote>{date}</blockquote>
-      <img src={cover} alt="cover" />
+      <img
+        src={!!cover.childImageSharp ? cover.childImageSharp.fluid.src : cover}
+        alt="cover"
+      />
       <p>{description}</p>
     </div>
   )

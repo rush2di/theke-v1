@@ -10,17 +10,22 @@ const PostsList = () => {
           node {
             frontmatter {
               titre
-              date
+              date(formatString: "Do MMMM YYYY", locale: "fr")
               description
-              envedette
-              coverture
+              coverture {
+                childImageSharp {
+                  fluid(maxWidth: 600, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
             }
           }
         }
       }
     }
   `)
-  console.log(data)
+  // console.log(data)
   const postsProvider = data.allMarkdownRemark.edges.map(edge => {
     return (
       <li key={edge.node.id}>
