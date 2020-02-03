@@ -54,24 +54,33 @@ collections:
     label: "En vedette"
     folder: "static/vedette"
     identifier_field: selection
-    create: true
-    slug: "{{slug}}"
+    create: false
+    slug: "posts-en-vedette"
     editor:
       preview: false
     fields:
-      - {
-          label: "Selection",
-          name: "selection",
-          widget: "hidden",
-          default: "posts en vedette",
-        }
-      - name: "title"
-        label: "Vedette"
-        widget: "relation"
-        collection: "articles"
-        default: select
-        searchFields: ["titre"]
-        valueField: "titre"
-        multiple: true
-        min: 3
-        max: 3
+      - name: "selection"
+        label: "Selection"
+        widget: "object"
+        fields:
+          - name: "post1"
+            label: "Post 1"
+            widget: "relation"
+            collection: "articles"
+            default: select
+            searchFields: ["titre"]
+            valueField: "titre"
+          - name: "post2"
+            label: "Post 2"
+            widget: "relation"
+            collection: "articles"
+            default: select
+            searchFields: ["titre"]
+            valueField: "titre"
+          - name: "post3"
+            label: "Post 3"
+            widget: "relation"
+            collection: "articles"
+            default: select
+            searchFields: ["titre"]
+            valueField: "titre"
