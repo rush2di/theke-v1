@@ -12,13 +12,7 @@ const PostsList = () => {
               titre
               date(formatString: "Do MMMM YYYY", locale: "fr")
               description
-              coverture {
-                childImageSharp {
-                  fluid(maxWidth: 600, quality: 100) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
+              coverture 
             }
           }
         }

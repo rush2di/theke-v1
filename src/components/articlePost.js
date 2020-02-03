@@ -2,13 +2,10 @@ import React from "react"
 
 const ArticlePost = ({ title, date, cover, description }) => {
   return (
-    <div>
+    <div className="postcard">
       <h1>{title}</h1>
       <blockquote>{date}</blockquote>
-      <img
-        src={!!cover.childImageSharp ? cover.childImageSharp.fluid.src : cover}
-        alt="cover"
-      />
+      <div style={{ backgroundImage: `url(${cover})` }} />
       <p>{description}</p>
     </div>
   )
