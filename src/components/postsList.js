@@ -1,25 +1,28 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import ArticlePost from "./articlePost"
+import FeaturedPosts from "./featuredPosts"
 
 const PostsList = () => {
   const data = useStaticQuery(graphql`
-    {
-      allMarkdownRemark {
-        edges {
-          node {
-            frontmatter {
-              titre
-              date(formatString: "Do MMMM YYYY", locale: "fr")
-              description
-              coverture 
-            }
+  {
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            titre
+            coverture
+            date(formatString: "Do MMMM YYYY", locale: "fr")
+            description
           }
         }
       }
     }
+  }
   `)
-  // console.log(data)
   const postsProvider = data.allMarkdownRemark.edges.map(edge => {
     return (
       <li key={edge.node.id}>
@@ -32,8 +35,14 @@ const PostsList = () => {
       </li>
     )
   })
-  console.log(data)
-  return <ul>{postsProvider}</ul>
+  return (
+    <section>
+      <FeaturedPosts posts={data.allMarkdownRemark.edges} />
+      <div>
+        <ul style={{ listStyle: "none" }}>{postsProvider}</ul>
+      </div>
+    </section>
+  )
 }
 
 export default PostsList

@@ -5,7 +5,6 @@ import PostsList from "../components/postsList"
 const Home = () => {
   return (
     <Layout>
-      <div>hello world</div>
       <div>
         <PostsList />
       </div>
