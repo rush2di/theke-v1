@@ -1,7 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import ArticlePost from "./articlePost"
-import FeaturedPosts from "./featuredPosts"
 
 const PostsList = () => {
   const data = useStaticQuery(graphql`
@@ -37,7 +36,6 @@ const PostsList = () => {
   })
   return (
     <section>
-      <FeaturedPosts posts={data.allMarkdownRemark.edges} />
       <div>
         <ul style={{ listStyle: "none" }}>{postsProvider}</ul>
       </div>
