@@ -2,10 +2,10 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 const FeaturedPosts = ({ posts }) => {
-  const data = useStaticQuery(graphql`
+  const vedette = useStaticQuery(graphql`
     {
       allMarkdownRemark(
-        filter: { id: { eq: "d757ace5-e87b-5428-9848-3c60dfac38ff" } }
+        filter: { frontmatter: { templateKey: { eq: "en-vedette" } } }
       ) {
         edges {
           node {
@@ -21,7 +21,7 @@ const FeaturedPosts = ({ posts }) => {
       }
     }
   `)
-  const postlist = data.allMarkdownRemark.edges[0].node.frontmatter.selection
+  const postlist = vedette.allMarkdownRemark.edges[0].node.frontmatter.selection
   const filtredPosts = posts.filter(edge => {
     if (edge.node.frontmatter.titre === postlist.post1) {
       return true
