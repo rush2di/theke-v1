@@ -59,6 +59,12 @@ collections:
     editor:
       preview: false
     fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "en-vedette",
+        }
       - name: "selection"
         label: "Selection"
         widget: "object"
