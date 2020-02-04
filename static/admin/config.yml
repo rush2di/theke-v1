@@ -54,7 +54,7 @@ collections:
     label: "En vedette"
     folder: "static/vedette"
     identifier_field: selection
-    create: false
+    create: true
     slug: "posts-en-vedette"
     editor:
       preview: false
