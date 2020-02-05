@@ -4,8 +4,8 @@ const Aside = ({ posts }) => {
   const tagList = posts.map(edge => edge.node.frontmatter.tags)
   const mappedTags = [].concat(...tagList)
   const filtred = mappedTags.filter((a, i) => mappedTags.indexOf(a) === i)
-  const recentPosts = posts.slice(0, 4).map(edge => {
-    return <li>{edge.node.frontmatter.titre}</li>
+  const recentPosts = posts.slice(0, 4).map((edge,i) => {
+    return <li key={i+"_post"}>{edge.node.frontmatter.titre}</li>
   })
 
   return (

@@ -1,12 +1,21 @@
 import React from "react"
+import { Link } from "gatsby"
 
 const ArticlePost = ({ title, date, cover, description }) => {
   return (
     <div className="postcard">
       <h1>{title}</h1>
       <blockquote>{date}</blockquote>
-      <div style={{ backgroundImage: `url(${cover})` }} />
+      <div
+        className="postcard_img"
+        style={{ backgroundImage: `url(${cover})` }}
+      />
       <p>{description}</p>
+      <div className="postcard_link">
+        <Link to="#">
+          continue la lecture <span>&#8594;</span>
+        </Link>
+      </div>
     </div>
   )
 }
