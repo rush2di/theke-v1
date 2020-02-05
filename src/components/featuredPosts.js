@@ -50,7 +50,7 @@ const FeaturedPosts = ({ posts }) => {
               <div className="over-box">
                 <h3>{post.node.frontmatter.titre}</h3>
                 <p>
-                  {post.node.frontmatter.description.substring(0, 120) + "..."}
+                  {post.node.frontmatter.description}
                 </p>
               </div>
             </div>

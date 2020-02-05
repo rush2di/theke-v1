@@ -19,6 +19,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+//////////////////////////////////////////////////////////////////
+//// I- Layout //// Navbar Styles ////////////////////////////////
+//////////////////////////////////////////////////////////////////
+
 nav {
   display: flex;
   width: 100%;
@@ -63,6 +67,10 @@ nav {
 .container {
   @include container($main: true);
 }
+
+//////////////////////////////////////////////////////////////////
+//// I- Layout //// Footer Styles ////////////////////////////////
+//////////////////////////////////////////////////////////////////
 
 .footer {
   background: $footer-bg;
@@ -121,6 +129,152 @@ nav {
   }
 }
 
+//////////////////////////////////////////////////////////////////
+//// II - Home ////  Featured Posts Styles ///////////////////////
+//////////////////////////////////////////////////////////////////
+
+.featured-posts {
+  margin: 1.5rem 1.5rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  .post-box {
+    background-size: cover;
+    width: 100%;
+    box-shadow: 1px 1px 10px #0000007d;
+    height: 17rem;
+    border-radius: 0.35rem;
+    position: relative;
+  }
+  .post-box:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, black, #4e4e4ef0 40%, #7a7a7a52 60%);
+    position: absolute;
+    top: 0;
+    border-radius: 0.35rem;
+  }
+  .over-box {
+    color: white;
+    position: absolute;
+    margin: 0 2.5rem;
+    bottom: 1.5rem;
+    right: 0;
+    left: 0;
+    display: inline-block;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: 1;
+    h3 {
+      font-size: 1.2rem;
+      font-family: "Muli", sans-serif;
+      margin: 0 0 1rem;
+      text-transform: capitalize;
+      font-weight: normal;
+    }
+    p {
+      font-size: 0.8rem;
+      color: lightgray;
+      line-height: 1.4;
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////
+//// II - Home ////  Main Section Container  /////////////////////
+//////////////////////////////////////////////////////////////////
+
+.main-section {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  margin: 0 1.5rem;
+
+  //////////////////////////////////////////////////////////////////
+  //// II - Home ////  Blog Posts Styles ///////////////////////////
+  //////////////////////////////////////////////////////////////////
+
+  .postcard-wrapper {
+    margin-bottom: 3rem;
+  }
+  .postcard {
+    margin-right: 4.5rem;
+    h1 {
+      font-family: "Muli", sans-serif;
+      color: $txt-prim-color;
+      font-size: 1.9rem;
+      text-transform: capitalize;
+      font-weight: 900;
+      line-height: 1;
+      width: 95%;
+    }
+    blockquote {
+      font-size: 0.75rem;
+      color: $txt-second-color;
+      margin: 1rem 0;
+    }
+    div {
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 400px;
+    }
+    p {
+      font-size: 0.9rem;
+      margin: 1rem 0;
+      color: $txt-prim-color;
+      line-height: 1.5;
+    }
+  }
+
+  //////////////////////////////////////////////////////////////////
+  //// II - Home ////  Aside Box Styles ////////////////////////////
+  //////////////////////////////////////////////////////////////////
+
+  .aside-box {
+    background: #e7e7e7;
+    height: 600px;
+    border-radius: 0.3rem;
+    color: $txt-second-color;
+    font-size: 14px;
+    margin-left: 1rem;
+    .aside-box_tags,
+    .aside-box_recent {
+      margin: 1rem 0 1rem 2rem;
+      line-height: 1.5;
+    }
+    span {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      font-family: "Muli", sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: $txt-prim-color;
+    }
+    ul {
+      list-style: none;
+      li {
+        white-space: nowrap;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 85%;
+      }
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////
+//// III - About //// Section Styles /////////////////////////////
+//////////////////////////////////////////////////////////////////
+
 .section {
   margin: 0 7rem 10rem;
   h3 {
@@ -163,81 +317,6 @@ nav {
     }
     .left {
       justify-self: left;
-    }
-  }
-}
-
-.postcard {
-  margin: 0 0 0.5rem;
-  h1 {
-    font-family: "Muli", sans-serif;
-    color: $txt-prim-color;
-  }
-  blockquote {
-    font-size: 0.7rem;
-    color: $txt-second-color;
-    margin: 1rem 0;
-  }
-  div {
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 300px;
-  }
-  p {
-    font-size: 0.9rem;
-    margin: 1rem 0;
-    color: $txt-prim-color;
-  }
-}
-
-.featured-posts {
-  margin: 1rem 0 3rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 1.5rem;
-  align-items: center;
-  justify-content: center;
-  .post-box{
-    background-size: cover;
-    width: 100%;
-    box-shadow: 1px 1px 10px #0000007d;
-    height: 18rem;
-    border-radius: .35rem;
-    position: relative;
-  }
-  .post-box:after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(0deg, black, #4e4e4ef5 30%, #6f6f6f00 60%);
-    position: absolute;
-    top: 0;
-    border-radius: .35rem;
-  }
-  .over-box {
-    color: white;
-    position: absolute;
-    margin: 0 2.5rem;
-    bottom: 1.5rem;
-    right: 0;
-    left: 0;
-    display: inline-block;
-    white-space: normal;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    z-index: 1;
-    h3{
-      font-size: 1.2rem;
-      font-family: 'muli';
-      margin: 0 0 1rem;
-      text-transform: capitalize;
-      font-weight: normal;
-    }
-    p{
-      font-size: .8rem;
-      color: lightgray;
-      line-height: 1.4;
     }
   }
 }

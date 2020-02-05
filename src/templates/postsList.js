@@ -1,7 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import ArticlePost from "./articlePost"
-import FeaturedPosts from "./featuredPosts"
+import ArticlePost from "../components/articlePost"
+import FeaturedPosts from "../components/featuredPosts"
+import Aside from "../components/aside"
 
 const PostsList = () => {
   const data = useStaticQuery(graphql`
@@ -17,6 +18,7 @@ const PostsList = () => {
               coverture
               date(formatString: "Do MMMM YYYY", locale: "fr")
               description
+              tags
             }
           }
         }
@@ -25,7 +27,7 @@ const PostsList = () => {
   `)
   const postsProvider = data.allMarkdownRemark.edges.map(edge => {
     return (
-      <li key={edge.node.id}>
+      <li className='postcard-wrapper' key={edge.node.id}>
         <ArticlePost
           title={edge.node.frontmatter.titre}
           date={edge.node.frontmatter.date}
@@ -37,9 +39,10 @@ const PostsList = () => {
   })
   return (
     <section>
-      <div>
-        <FeaturedPosts posts={data.allMarkdownRemark.edges} />
+      <FeaturedPosts posts={data.allMarkdownRemark.edges} />
+      <div className='main-section'>
         <ul style={{ listStyle: "none" }}>{postsProvider}</ul>
+        <Aside posts={data.allMarkdownRemark.edges} />
       </div>
     </section>
   )
