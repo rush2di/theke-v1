@@ -2,7 +2,7 @@ import React from "react"
 
 const Aside = ({ posts }) => {
   const tagList = posts.map(edge => edge.node.frontmatter.tags)
-  const mappedTags = new Array().concat(...tagList)
+  const mappedTags = [].concat(...tagList)
   const filtred = mappedTags.filter((a, i) => mappedTags.indexOf(a) === i)
   const recentPosts = posts.slice(0, 4).map(edge => {
     return <li>{edge.node.frontmatter.titre}</li>
