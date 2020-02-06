@@ -13,6 +13,9 @@ const PostsList = () => {
       ) {
         edges {
           node {
+            fields {
+              slug
+            }
             frontmatter {
               titre
               coverture
@@ -27,12 +30,13 @@ const PostsList = () => {
   `)
   const postsProvider = data.allMarkdownRemark.edges.map(edge => {
     return (
-      <li className='postcard-wrapper' key={edge.node.id}>
+      <li className="postcard-wrapper" key={edge.node.id}>
         <ArticlePost
           title={edge.node.frontmatter.titre}
           date={edge.node.frontmatter.date}
           cover={edge.node.frontmatter.coverture}
           description={edge.node.frontmatter.description}
+          slug={edge.node.fields.slug}
         />
       </li>
     )
@@ -40,7 +44,7 @@ const PostsList = () => {
   return (
     <section>
       <FeaturedPosts posts={data.allMarkdownRemark.edges} />
-      <div className='main-section'>
+      <div className="main-section">
         <ul style={{ listStyle: "none" }}>{postsProvider}</ul>
         <Aside posts={data.allMarkdownRemark.edges} />
       </div>
