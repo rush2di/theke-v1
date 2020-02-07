@@ -11,8 +11,6 @@ module.exports = {
     developedBy: "Rochdi Belhirch",
   },
   plugins: [
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -28,6 +26,15 @@ module.exports = {
         ],
       },
     },
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/static/img`,
+        name: "coverture",
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -40,13 +47,6 @@ module.exports = {
       options: {
         name: "enVedette",
         path: `${__dirname}/static/vedette`,
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/static/img`,
-        name: "coverture",
       },
     },
     "gatsby-plugin-sass",
