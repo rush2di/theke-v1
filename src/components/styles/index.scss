@@ -342,6 +342,56 @@ nav {
   }
 }
 
+//////////////////////////////////////////////////////////////////
+//// IV - Blog-Post //// Section Styles //////////////////////////
+//////////////////////////////////////////////////////////////////
+
+.article_wrapper {
+  margin-bottom: 5rem;
+  .article_head {
+    position: relative;
+    h3 {
+      position: absolute;
+      top: 50%;
+      color: white;
+      font-size: 2.5rem;
+      text-transform: capitalize;
+      width: 100%;
+      text-align: center;
+      z-index: 5;
+    }
+  }
+  .article_head--bg {
+    height: 450px;
+    width: 100%;
+    background-size: cover;
+    background-position: top;
+    position: relative;
+  }
+  .article_head--bg::after {
+    height: 100%;
+    width: 100%;
+    background: #0000009e;
+  }
+  .article_body {
+    margin: 1.5rem 1rem;
+    line-height: 1.6;
+    h1 {
+      margin: 0 0 1rem;
+      font-size: 2rem;
+      font-weight: 800;
+    }
+    h1,h2,h3,h4,h5,h6 {
+      color: $txt-prim-color;      
+      font-family: "Muli",sans-serif;
+    }
+    p {
+      color: $txt-second-color;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
 @media (max-width: 1200px) {
   .container {
     width: 90vw;
