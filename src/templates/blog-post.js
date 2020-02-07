@@ -37,13 +37,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         titre
         description
-        coverture {
-          childImageSharp {
-            fluid(maxWidth: 720, quality: 75) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+        coverture 
         tags
       }
     }

@@ -11,7 +11,12 @@ module.exports = {
     developedBy: "Rochdi Belhirch",
   },
   plugins: [
-    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        defaultQuality: 75
+      }
+    },
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-transformer-remark",
