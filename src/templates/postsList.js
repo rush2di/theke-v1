@@ -20,7 +20,7 @@ const PostsList = () => {
               titre
               coverture {
                 childImageSharp {
-                  fluid(maxWidth: 720) {
+                  fluid(maxWidth: 1200) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -35,18 +35,20 @@ const PostsList = () => {
     }
   `)
   const postsProvider = data.allMarkdownRemark.edges.map(edge => {
+    const { titre, date, coverture, description } = edge.node.frontmatter
+    const { slug } = edge.node.fields
     return (
       <li className="postcard-wrapper" key={edge.node.id}>
         <ArticlePost
-          title={edge.node.frontmatter.titre}
-          date={edge.node.frontmatter.date}
+          title={titre}
+          date={date}
           cover={
             !!coverture.childImageSharp
               ? coverture.childImageSharp.fluid.src
               : coverture
           }
-          description={edge.node.frontmatter.description}
-          slug={edge.node.fields.slug}
+          description={description}
+          slug={slug}
         />
       </li>
     )

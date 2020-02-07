@@ -3,24 +3,20 @@ import Layout from "../components/layout"
 import { graphql } from "gatsby"
 
 const BlogPost = props => {
-  props && console.log(props)
   const { html } = props.data.markdownRemark
   const { coverture, titre } = props.data.markdownRemark.frontmatter
+  const bgImage = !!coverture.childImageSharp
+  ? coverture.childImageSharp.fluid.src
+  : coverture
   return (
     <Layout>
-      <div className="article-wrapper">
+      <div className="article_wrapper">
         <div className="article_head">
-          <img
-            src={
-              !!coverture.childImageSharp
-                ? coverture.childImageSharp.fluid.src
-                : coverture
-            }
-            alt={titre}
+          <div className="article_head--bg" style={{backgroundImage: `url(${bgImage})`}}
           />
           <h3>{titre}</h3>
         </div>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <div className="article_body" dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </Layout>
   )
@@ -39,7 +35,7 @@ export const pageQuery = graphql`
         description
         coverture {
           childImageSharp {
-            fluid(maxWidth: 720) {
+            fluid(maxWidth: 1200) {
               ...GatsbyImageSharpFluid
             }
           }

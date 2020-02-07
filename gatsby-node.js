@@ -1,4 +1,4 @@
-const { fmImagesToRelative } = require('gatsby-remark-relative-images')
+const { fmImagesToRelative } = require("gatsby-remark-relative-images")
 const { createFilePath } = require("gatsby-source-filesystem")
 const path = require("path")
 
