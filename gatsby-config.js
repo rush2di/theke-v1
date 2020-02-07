@@ -11,12 +11,7 @@ module.exports = {
     developedBy: "Rochdi Belhirch",
   },
   plugins: [
-    {
-      resolve: "gatsby-plugin-sharp",
-      options: {
-        defaultQuality: 75
-      }
-    },
+    "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-transformer-remark",
@@ -33,8 +28,6 @@ module.exports = {
         ],
       },
     },
-    "gatsby-plugin-sass",
-    "gatsby-plugin-netlify-cms",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -55,6 +48,8 @@ module.exports = {
         path: `${__dirname}/static/img`,
         name: "coverture",
       },
-    }
+    },
+    "gatsby-plugin-sass",
+    "gatsby-plugin-netlify-cms",
   ],
 }
