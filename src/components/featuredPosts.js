@@ -44,14 +44,12 @@ const FeaturedPosts = ({ posts }) => {
               className="post-box"
               key={`card_${post.node.id}`}
               style={{
-                backgroundImage: `url(${post.node.frontmatter.coverture})`,
+                backgroundImage: `url(${post.node.frontmatter.coverture.childImageSharp.fluid.src})`,
               }}
             >
               <div className="over-box">
                 <h3>{post.node.frontmatter.titre}</h3>
-                <p>
-                  {post.node.frontmatter.description}
-                </p>
+                <p>{post.node.frontmatter.description}</p>
               </div>
             </div>
           )

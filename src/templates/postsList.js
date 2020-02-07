@@ -18,7 +18,13 @@ const PostsList = () => {
             }
             frontmatter {
               titre
-              coverture
+              coverture {
+                childImageSharp {
+                  fluid(maxWidth: 720) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
               date(formatString: "Do MMMM YYYY", locale: "fr")
               description
               tags
@@ -34,7 +40,11 @@ const PostsList = () => {
         <ArticlePost
           title={edge.node.frontmatter.titre}
           date={edge.node.frontmatter.date}
-          cover={edge.node.frontmatter.coverture}
+          cover={
+            !!coverture.childImageSharp
+              ? coverture.childImageSharp.fluid.src
+              : coverture
+          }
           description={edge.node.frontmatter.description}
           slug={edge.node.fields.slug}
         />
