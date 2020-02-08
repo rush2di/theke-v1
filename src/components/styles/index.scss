@@ -244,12 +244,20 @@ nav {
       font-weight: 600;
       font-size: 15px;
       color: $txt-link-color;
+      transition: all .4s ease-out;
       span {
         font-size: 1.2rem;
+        width: 0px;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0 0 -.3rem;
       }
     }
     a:hover {
       color: $txt-link-color-hover;
+      span {
+        width: 20px
+      }
     }
   }
 
