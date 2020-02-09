@@ -63,7 +63,7 @@ exports.createPages = ({ actions, graphql }) => {
             "societe",
             "culture",
             "politiques",
-            "décoverte",
+            "decoverte",
             "exploration",
         ]
 
