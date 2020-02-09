@@ -19,7 +19,7 @@ export const ArticlePageLayout = ({data}) => {
 		"societe",
 		"culture",
 		"politiques",
-		"décoverte",
+		"decoverte",
 		"exploration",
 	]
 
