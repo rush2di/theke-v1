@@ -35,7 +35,7 @@ export const ArticlePageLayout = ({data}) => {
 		<Layout active={true}>
 			<nav className="articles_nav">
 				<ul>
-				<li><Link activeClassName="active" to="articles">all</Link></li>
+				<li><Link activeClassName="active" to="articles">tout</Link></li>
 				{tagsList}
 				</ul>
 			</nav>
