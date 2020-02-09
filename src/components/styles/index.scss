@@ -464,17 +464,32 @@ nav {
 //////////////////////////////////////////////////////////////////
 
 .articles_nav{
-    margin: 0 1rem;
+    padding: 1rem;
+    line-height: 2;
+    height: 100%;
     width: initial;
+    background: gainsboro;
+    border-radius: .3rem;
     ul {
         display: flex;
         flex-wrap: wrap;
         align-items: stretch;
         justify-content: center;
         li {
-            font-weight: 600;
+            font-weight: 500;            
+            display: block;
+            a {
+                font-size: 1rem;
+                text-decoration: none;
+                color: #7d7d7d;
+            }
+            a:hover {
+                color: #444444
+            }
         }
     }
+
+
 }
 
 @media (max-width: 1200px) {
