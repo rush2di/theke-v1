@@ -468,7 +468,6 @@ nav {
     line-height: 2;
     height: 100%;
     width: initial;
-    background: gainsboro;
     border-radius: .3rem;
     ul {
         display: flex;
@@ -484,11 +483,21 @@ nav {
                 color: #7d7d7d;
             }
             a:hover {
-                color: #444444
+                color: #95abc1;
             }
         }
     }
 
+    .active {
+        color: #1899ff;
+        transition: .2s ease-out;
+    }
+    .active:after {
+        display: none;
+    }
+    .active:hover {
+      color: #1899ff;
+    }
 
 }
 
