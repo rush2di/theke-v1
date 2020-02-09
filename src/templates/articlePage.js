@@ -26,7 +26,7 @@ export const ArticlePageLayout = ({data}) => {
 	const tagsList = tags.map((tag, i) => {
 		return (
 			<li key={"tag_" + i}>
-				<Link to={`articles/${tag}`}>{tag}</Link>
+				<Link activeClassName="active" to={`articles/${tag}`}>{tag}</Link>
 			</li>
 		)
 	})
@@ -34,10 +34,10 @@ export const ArticlePageLayout = ({data}) => {
 	return (
 		<Layout active={true}>
 			<nav>
-				<div>
-					<Link to="articles">all</Link>
-				</div>
-				<ul>{tagsList}</ul>
+				<ul>
+				<li><Link activeClassName="active" to="articles">all</Link></li>
+				{tagsList}
+				</ul>
 			</nav>
 			<div className="featured-posts">
 			{ 

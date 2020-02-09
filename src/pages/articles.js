@@ -32,10 +32,9 @@ const Articles = (props) => {
       }
     }
   `)
-	
+
 	console.log(props,data)
-  // return <ArticlePageLayout data={} />
-  return (<div>hi</div>)
+  return <ArticlePageLayout data={data.allMarkdownRemark} />
 }
 
 
