@@ -3,7 +3,6 @@ import { ArticlePageLayout } from "../templates/articlePage"
 import {graphql, useStaticQuery} from "gatsby"
 
 const Articles = (props) => {
-	console.log(props,data)
 	const data = useStaticQuery(graphql`
     {
       allMarkdownRemark(
@@ -33,6 +32,8 @@ const Articles = (props) => {
       }
     }
   `)
+	
+	console.log(props,data)
   // return <ArticlePageLayout data={} />
   return (<div>hi</div>)
 }
