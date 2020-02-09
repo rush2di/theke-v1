@@ -459,6 +459,24 @@ nav {
     }
 }
 
+//////////////////////////////////////////////////////////////////
+//// IV - articles //// Section Styles ///////////////////////////
+//////////////////////////////////////////////////////////////////
+
+.articles_nav{
+    margin: 0 1rem;
+    width: initial;
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: center;
+        li {
+            font-weight: 600;
+        }
+    }
+}
+
 @media (max-width: 1200px) {
     .container {
         width: 90vw;
