@@ -33,7 +33,7 @@ export const ArticlePageLayout = ({data}) => {
 
 	return (
 		<Layout active={true}>
-			<nav>
+			<nav className="articles_nav">
 				<ul>
 				<li><Link activeClassName="active" to="articles">all</Link></li>
 				{tagsList}
