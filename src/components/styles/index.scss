@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Muli:500,700,800,900&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Montserrat:500,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap");
 @import "./variables";
 @import "./mixins";
 
@@ -92,7 +92,7 @@ nav {
         padding-top: 3.5rem;
         padding-bottom: 3.5rem;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: .65fr 1fr 1fr;
         grid-gap: 1rem;
         align-items: start;
         justify-content: center;
@@ -116,21 +116,21 @@ nav {
 
         h3 {
             font-family: "Muli", sans-serif;
-            font-size: 1.15rem;
-            margin-bottom: 1rem;
+            font-size: 1rem;
+            margin-bottom: .5rem;
             color: $txt-prim-color;
         }
 
         p,
         span {
             text-transform: lowercase;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             line-height: 1.5;
         }
 
         a {
             color: $txt-link-color;
-            font-weight: 600;
+            font-weight: 500;
         }
 
         a:hover {
@@ -155,10 +155,10 @@ nav {
 //////////////////////////////////////////////////////////////////
 
 .featured-posts {
-    margin: 1.5rem 0 3.5rem;
+    margin: 1.5rem 2rem 3.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 1.5rem;
+    grid-gap: 1.3rem;
     align-items: center;
     justify-content: center;
 
@@ -220,6 +220,8 @@ nav {
 
 .main-section {
     display: grid;
+    margin-bottom: 5rem;
+    margin: 0 2rem;
     grid-template-columns: 3fr 0.55fr 1fr;
 
     //////////////////////////////////////////////////////////////////
@@ -227,7 +229,7 @@ nav {
     //////////////////////////////////////////////////////////////////
 
     .postcard-wrapper {
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
     }
 
     .postcard {
@@ -243,7 +245,7 @@ nav {
 
         blockquote {
             font-size: 0.8rem;
-            color: $txt-second-color;
+            color: #a2a2a2;
             margin: 1rem 0;
         }
 
@@ -252,12 +254,12 @@ nav {
             background-position: center;
             border-radius: 0.3rem;
             width: 100%;
-            height: 400px;
+            height: 380px;
         }
 
         p {
             font-size: 0.85rem;
-            margin: 1rem 0;
+            margin: 1rem 0 0.5rem;
             color: $txt-second-color;
             line-height: 1.5;
         }
@@ -298,13 +300,13 @@ nav {
     //////////////////////////////////////////////////////////////////
 
     .aside-box {
-        background: #e7e7e7;
-        height: 600px;
+        background: #dcdcdc;
+        border: 1px solid #cacaca;        
+        height: 450px;
         border-radius: 0.3rem;
         color: $txt-second-color;
         font-size: 14px;
         grid-column: 3;
-        margin-left: 1rem;
         margin-top: 2rem;
 
         .aside-box_tags,
