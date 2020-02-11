@@ -31,7 +31,7 @@ export const ArticlePageLayout = ({data}) => {
 	})
 
 	return (
-		<Layout active={true}>
+		<Layout activeNavItem2={true}>
 			<nav className="articles_nav">
 				<ul>
 				<li><Link activeClassName="active" to="articles">tout</Link></li>

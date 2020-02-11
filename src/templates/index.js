@@ -1,14 +1,14 @@
 import React from "react"
 import Layout from "../components/layout"
 import PostsList from "../templates/postsList"
-// import Pagination from "../components/pagination"
+import Pagination from "../components/pagination"
 
 const Home = props => {
-	console.log("meh",props)
-	const { group } = props.pageContext
+	const { group, first, last, index, pageCount } = props.pageContext
   return (
-    <Layout>    	
-        <PostsList posts={props.pageContext.group} />
+    <Layout activeNavItem1={true}>    	
+        <PostsList posts={group} />
+        <Pagination first={first} last={last} index={index} pageCount={pageCount} />
     </Layout>
   )
 }

@@ -7,7 +7,7 @@ const Layout = (props) => {
     return (
         <div>
             <div className='container'>
-                <Navbar active={!!props.active}/>
+                <Navbar activeNavItem1={!!props.activeNavItem1} activeNavItem2={!!props.activeNavItem2}/>
                 {props.children}
             </div>
             <Footer/>

@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import thekeLogo from "../../static/thekeLogo.svg"
 
-const Navbar = ({active}) => {
+const Navbar = ({activeNavItem2, activeNavItem1}) => {
   return (
     <nav>
       <div className="theke">
@@ -12,12 +12,12 @@ const Navbar = ({active}) => {
       </div>
       <ul>
         <li>
-          <Link activeClassName="active" to="/">
+          <Link className={activeNavItem1===true ? "active": ""} activeClassName="active" to="/">
             accueil
           </Link>
         </li>
         <li>
-          <Link className={active===true ? "active": ""} activeClassName="active" to="/articles">
+          <Link className={activeNavItem2===true ? "active": ""} activeClassName="active" to="/articles">
             articles
           </Link>
         </li>
