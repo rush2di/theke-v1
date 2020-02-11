@@ -4,7 +4,6 @@ import { PostsBoxs } from "../components/featuredPosts"
 import {Link, graphql} from "gatsby"
 
 export const ArticlePageLayout = ({data}) => {
-	console.log(data, data)
 	const tags = [
 		"science",
 		"biologie",
