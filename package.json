@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "gatsby": "^2.19.12",
+    "gatsby-paginate": "^1.1.1",
     "gatsby-plugin-netlify-cms": "^4.1.38",
     "gatsby-plugin-sass": "^2.1.28",
     "gatsby-plugin-sharp": "^2.4.5",

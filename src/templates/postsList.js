@@ -4,7 +4,7 @@ import ArticlePost from "../components/articlePost"
 import FeaturedPosts from "../components/featuredPosts"
 import Aside from "../components/aside"
 
-const PostsList = () => {
+const PostsList = ({posts}) => {
   const data = useStaticQuery(graphql`
     {
       allMarkdownRemark(
@@ -34,7 +34,8 @@ const PostsList = () => {
       }
     }
   `)
-  const postsProvider = data.allMarkdownRemark.edges.map(edge => {
+
+  const postsProvider = posts.map(edge => {
     const { titre, date, coverture, description } = edge.node.frontmatter
     const { slug } = edge.node.fields
     return (

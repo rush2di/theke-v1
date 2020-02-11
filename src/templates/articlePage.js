@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import { PostsBoxs } from "../components/featuredPosts"
-import {Link} from "gatsby"
+import {Link, graphql} from "gatsby"
 
 export const ArticlePageLayout = ({data}) => {
 	console.log(data, data)

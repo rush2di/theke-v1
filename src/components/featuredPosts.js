@@ -39,7 +39,7 @@ const FeaturedPosts = ({ posts }) => {
     <div className="featured-posts">
       {!!filtredPosts &&
         filtredPosts.map(post => {
-          return <PostsBoxs post={post} />
+          return <PostsBoxs key={`card_${post.node.id}`} post={post} />
         })}
     </div>
   )
@@ -51,7 +51,6 @@ export const PostsBoxs = ({ post }) => {
   return (
     <div
       className="post-box"
-      key={`card_${post.node.id}`}
       style={{
         backgroundImage: `url(${post.node.frontmatter.coverture.childImageSharp.fluid.src})`,
       }}

@@ -1,6 +1,8 @@
 const { fmImagesToRelative } = require("gatsby-remark-relative-images")
 const { createFilePath } = require("gatsby-source-filesystem")
+const createPaginatedPages = require("gatsby-paginate")
 const path = require("path")
+
 
 const makeRequest = (graphql, request) =>
     new Promise((resolve, reject) => {
@@ -31,6 +33,19 @@ exports.createPages = ({ actions, graphql }) => {
             fields {
               slug
             }
+            frontmatter {
+              titre
+              description
+              date(formatString: "Do MMMM YYYY", locale: "fr")
+              tags
+              coverture {
+                childImageSharp {
+                  fluid(maxWidth: 1200) {
+                    src
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -38,6 +53,14 @@ exports.createPages = ({ actions, graphql }) => {
   `
     ).then(res => {
         const posts = res.data.allMarkdownRemark.edges
+
+        createPaginatedPages({
+            edges: posts,
+            createPage: createPage,
+            pageTemplate: 'src/templates/index.js',
+            pageLength: 2,
+        })
+
         posts.forEach(edge => {
             const id = edge.node.id
             createPage({
