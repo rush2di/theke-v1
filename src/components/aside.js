@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 
 const Aside = ({ posts }) => {
@@ -60,7 +60,7 @@ export const SearchBar = ({ posts }) => {
           return true
         }
       })
-      setState(res)
+      return setState(res)
     }
   }
 
