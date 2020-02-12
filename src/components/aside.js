@@ -64,7 +64,6 @@ export const SearchBar = ({ posts }) => {
     }
   }
 
-  console.log(state)
   return (
     <div>
       <input onChange={handleChange} type="text" placeholder="recherche" />
