@@ -56,17 +56,21 @@ export const SearchBar = ({ posts }) => {
     if (e.target.value.length > 3) {
       const res = posts.filter(edge => {
         const { titre, tags } = edge.node.frontmatter
-        if (titre.search(input) !== -1 || tags.includes(input)) {
-          return true
-        }
+        return titre.search(input) !== -1 || tags.includes(input)
       })
       setState(res)
+    }else if ( state.length && e.target.value.length < 3){
+      setState([])
     }
+  }
+
+  const emptySugestions = () => {
+    setState([])
   }
 
   return (
     <div>
-      <input onChange={handleChange} type="text" placeholder="recherche" />
+      <input onBlur={emptySugestions} onChange={handleChange} type="text" placeholder="recherche" />
       {!!state.length && (
         <div>
           <ul>
