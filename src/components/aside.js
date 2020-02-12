@@ -72,7 +72,8 @@ export const SearchBar = ({ posts }) => {
         <div>
           <ul>
             {state.map(edge => {
-              const { slug, id } = edge.node.fields
+              const { id } = edge.node
+              const { slug } = edge.node.fields
               const { titre } = edge.node.frontmatter
               return (
                 <li key={`sug_${id}`}>
