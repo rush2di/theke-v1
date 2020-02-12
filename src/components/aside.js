@@ -7,7 +7,7 @@ const Aside = ({ posts }) => {
     const { titre } = edge.node.frontmatter
     return (
       <li key={i + "_post"}>
-        <Link to={`article/${slug}`}>{titre}</Link>
+        <Link to={`/article/${slug}`}>{titre}</Link>
       </li>
     )
   })
@@ -42,7 +42,7 @@ export const FiltredTags = ({ posts }) => {
     !!filtred.length &&
     filtred.map((tag, i) => (
       <li key={i + "_tag"}>
-        <Link to={`articles/${tag}`}>{tag}</Link>
+        <Link to={`/articles/${tag}`}>{tag}</Link>
       </li>
     ))
   )
@@ -60,7 +60,7 @@ export const SearchBar = ({ posts }) => {
           return true
         }
       })
-      return setState(res)
+      setState(res)
     }
   }
 
@@ -76,7 +76,7 @@ export const SearchBar = ({ posts }) => {
               const { titre } = edge.node.frontmatter
               return (
                 <li key={`sug_${id}`}>
-                  <Link to={`article/${slug}`}>{titre}</Link>
+                  <Link to={`/article/${slug}`}>{titre}</Link>
                 </li>
               )
             })}

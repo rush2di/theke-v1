@@ -12,7 +12,7 @@ const ArticlePost = ({ title, date, cover, description, slug }) => {
       />
       <p>{description}</p>
       <div className="postcard_link">
-        <Link to={`article${slug}`}>
+        <Link to={`/article${slug}`}>
           continue la lecture <span>&#8594;</span>
         </Link>
       </div>
