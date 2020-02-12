@@ -3,15 +3,13 @@ import { Link } from "gatsby"
 
 const Pagination = ({ first, last, index, pageCount }) => {
 	return (
-		<div>
+		<div className="pagination">
 			{!!first || (
 				<Link to={index === 2 ? "/" : `/${(index - 1).toString()}`}>
 					&#8249;
 				</Link>
 			)}
-			<div>
-				<PageNums index={index} pageCount={pageCount} />
-			</div>
+			<PageNums index={index} pageCount={pageCount} />
 			{!!last || <Link to={`/${(index + 1).toString()}`}>&#8250;</Link>}
 		</div>
 	)
@@ -36,34 +34,28 @@ const PageNums = ({ index, pageCount }) => {
 	}
 
 	if (pageCount <= 5) {
-		return (
-			<ul>
-				{range(1, pageCount).map(num => (
-					<li key={"key_" + num}>
-						<Link to={`/${num}`}>{num}</Link>
-					</li>
-				))}
-			</ul>
-		)
-	} else if (pageCount > 5) {
-		return (
-			<ul>
-				{range(index, index + 5).map(num => (
-					<li key={"key_" + num}>
-						<Link to={`/${num}`}>{num}</Link>
-					</li>
-				))}
-			</ul>
-		)
-	} else if (pageCount - 5 >= index) {
-		return (
-			<ul>
-				{range(pageCount - 5, pageCount).map(num => (
-					<li key={"key_" + num}>
-						<Link to={`/${num}`}>{num}</Link>
-					</li>
-				))}
-			</ul>
-		)
+		return listItem(range(1, pageCount))
 	}
+	if (pageCount > 5) {
+		return listItem(range(index, index + 5))
+	}
+	if (pageCount - 5 >= index) {
+		return listItem(range(pageCount - 5, pageCount))
+	}
+}
+
+const listItem = callBackRange => {
+	return (
+		<div className="pagination_number">
+			<ul>
+				{callBackRange.map(num => {
+					return (
+						<li key={"key_" + num}>
+							<Link to={num === 1 ? "/" : `/${num}`}>{num}</Link>
+						</li>
+					)
+				})}
+			</ul>
+		</div>
+	)
 }
