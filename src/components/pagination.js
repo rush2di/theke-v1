@@ -5,12 +5,12 @@ const Pagination = ({ first, last, index, pageCount }) => {
 	return (
 		<div className="pagination">
 			{!!first || (
-				<Link to={index === 2 ? "/" : `/${(index - 1).toString()}`}>
+				<Link className="arrow" to={index === 2 ? "/" : `/${(index - 1).toString()}`}>
 					&#8249;
 				</Link>
 			)}
 			<PageNums index={index} pageCount={pageCount} />
-			{!!last || <Link to={`/${(index + 1).toString()}`}>&#8250;</Link>}
+			{!!last || <Link className="arrow" to={`/${(index + 1).toString()}`}>&#8250;</Link>}
 		</div>
 	)
 }
@@ -51,7 +51,7 @@ const listItem = callBackRange => {
 				{callBackRange.map(num => {
 					return (
 						<li key={"key_" + num}>
-							<Link to={num === 1 ? "/" : `/${num}`}>{num}</Link>
+							<Link activeClassName='active-link' to={num === 1 ? "/" : `/${num}`}>{num}</Link>
 						</li>
 					)
 				})}

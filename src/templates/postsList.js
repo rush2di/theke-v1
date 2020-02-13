@@ -2,9 +2,10 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import ArticlePost from "../components/articlePost"
 import FeaturedPosts from "../components/featuredPosts"
+import Pagination from "../components/pagination"
 import Aside from "../components/aside"
 
-const PostsList = ({posts}) => {
+const PostsList = ({posts, first, last, index, pageCount}) => {
   const data = useStaticQuery(graphql`
     {
       allMarkdownRemark(
@@ -58,7 +59,12 @@ const PostsList = ({posts}) => {
     <section>
       <FeaturedPosts posts={data.allMarkdownRemark.edges} />
       <div className="main-section">
-        <ul style={{ listStyle: "none" }}>{postsProvider}</ul>
+        <ul style={{ listStyle: "none" }}>
+        {postsProvider}
+        <li>
+          <Pagination first={first} last={last} index={index} pageCount={pageCount} />
+        </li>
+        </ul>
         <Aside posts={data.allMarkdownRemark.edges} />
       </div>
     </section>

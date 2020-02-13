@@ -225,7 +225,7 @@ nav {
     grid-template-columns: 3fr 0.55fr 1fr;
 
     //////////////////////////////////////////////////////////////////
-    //// II - Home ////  Blog Posts Styles ///////////////////////////
+    //// II - Home ////  1 - Blog Posts Styles ///////////////////////
     //////////////////////////////////////////////////////////////////
 
     .postcard-wrapper {
@@ -293,7 +293,9 @@ nav {
                 width: 20px
             }
         }
+
     }
+
 
     //////////////////////////////////////////////////////////////////
     //// II - Home ////  Aside Box Styles ////////////////////////////
@@ -372,6 +374,50 @@ nav {
     		color: white;
 	    }
     }
+
+
+    //////////////////////////////////////////////////////////////////
+    //// II - Home ////  2 - Pagination Styles ///////////////////////
+    //////////////////////////////////////////////////////////////////
+
+	.pagination {
+		display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    color: #7a7a7a;
+	    margin-bottom: 1rem;
+	    .pagination_number {
+	    	margin: 0 .5rem;
+	    	ul {
+	    		list-style: none;
+    			display: inline-flex;
+	    	}
+	    	li {
+	    		padding: .3rem .75rem;
+    			margin: .3rem;
+	    	}
+	    	a {
+	    		font-weight: 500;
+	    		text-decoration: underline;
+	    	}
+		    .active-link {
+		    	color: #7a7a7a;
+			    font-weight: 600;
+			    text-decoration: none;
+		    }
+	    }
+	    .arrow {
+	    	font-size: 1.7rem;
+		    font-weight: 700;
+		    margin: -.3rem 0 0;
+		    color: #95abc1;
+		    text-decoration: none;
+	    }
+	    .arrow:hover {
+	    	text-decoration: none;
+	    	color: #1899ff;
+	    }
+	}
 }
 
 //////////////////////////////////////////////////////////////////
