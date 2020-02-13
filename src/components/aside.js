@@ -1,5 +1,6 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
+import Autosuggest from 'react-autosuggest'
+import { Link, navigate } from "gatsby"
 
 const Aside = ({ posts }) => {
   const recentPosts = posts.slice(0, 4).map((edge, i) => {
@@ -49,44 +50,66 @@ export const FiltredTags = ({ posts }) => {
 }
 
 export const SearchBar = ({ posts }) => {
-  const [state, setState] = useState([])
-  const handleChange = e => {
-    e.preventDefault()
-    const input = e.target.value
-    if (e.target.value.length > 3) {
-      const res = posts.filter(edge => {
-        const { titre, tags } = edge.node.frontmatter
-        return titre.search(input) !== -1 || tags.includes(input)
-      })
-      setState(res)
-    }else if ( state.length && e.target.value.length < 3){
-      setState([])
+  const [value, setValue] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+
+  const postsData = posts.map(post => {
+    return { 
+    name: post.node.frontmatter.titre,
+    slug: post.node.fields.slug,
+    tags: post.node.frontmatter.tags
     }
+  })
+
+  const getSuggestions = value => {
+    const inputValue = value.trim().toLowerCase()
+    const inputLength = inputValue.length
+
+    return inputLength === 0 ? [] : postsData.filter( post =>{
+    return post.name.search(inputValue) !== -1 || post.tags.includes(inputValue)
+    })
   }
 
-  const emptySugestions = () => {
-    setState([])
+  const getSuggestionValue = suggestion => {
+    return suggestion.name
   }
 
+  const renderSuggestion = suggestion => {
+    return suggestion.name
+  }
+
+  const handleChange = (_, {newValue}) => {
+    setValue(newValue)
+  }
+
+  const onSuggestionsFetchRequested = ({value}) => {
+    setValue(value);
+    setSuggestions(getSuggestions(value))
+  }
+
+  const onSuggestionsClearRequested = () => {
+    setSuggestions([])
+  }
+
+  const onSuggestionSelected = (_ ,{suggestion}) => {
+    navigate(`article${suggestion.slug}`)
+  }
+
+  const inputProps = {
+    placeholder: 'recherche',
+    value,
+    onChange: handleChange
+  }
+  
   return (
-    <div>
-      <input onBlur={emptySugestions} onChange={handleChange} type="text" placeholder="recherche" />
-      {!!state.length && (
-        <div>
-          <ul>
-            {state.map(edge => {
-              const { id } = edge.node
-              const { slug } = edge.node.fields
-              const { titre } = edge.node.frontmatter
-              return (
-                <li key={`sug_${id}`}>
-                  <Link to={`/article/${slug}`}>{titre}</Link>
-                </li>
-              )
-            })}
-          </ul>
-        </div>
-      )}
-    </div>
-  )
+    <Autosuggest
+      suggestions={suggestions}
+      onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+      onSuggestionsClearRequested={onSuggestionsClearRequested}
+      getSuggestionValue={getSuggestionValue}
+      renderSuggestion={renderSuggestion}
+      inputProps={inputProps}
+      onSuggestionSelected={onSuggestionSelected}
+      />
+    )
 }

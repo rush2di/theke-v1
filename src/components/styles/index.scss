@@ -344,6 +344,34 @@ nav {
     	color: $txt-prim-color;
     	text-decoration: underline;
     }
+
+    .aside-box_search {
+    	.react-autosuggest__input{
+    	padding: .3rem;
+	    border-radius: 0.3rem;
+	    border: 1px solid #cacaca;
+	    width: 85%;
+	    }
+	    .react-autosuggest__suggestions-container {
+	    	background: white;
+		    width: 85%;
+		    border-right: 1px solid #e0e0e0;
+		    border-left: 1px solid #e0e0e0;
+	    }
+	    .react-autosuggest__suggestion {
+	    	padding: .5rem;
+		    white-space: nowrap;
+		    display: block;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    width: 100%;
+		    border-bottom: 1px solid #e0e0e0;
+	    }
+	    .react-autosuggest__suggestion--highlighted {
+	    	background: #407ee2;
+    		color: white;
+	    }
+    }
 }
 
 //////////////////////////////////////////////////////////////////
