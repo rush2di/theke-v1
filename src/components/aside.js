@@ -26,7 +26,7 @@ const Aside = ({ posts }) => {
       </div>
       <div className="aside-box_search">
         <span>recherche</span>
-        <SearchBar posts={posts} />
+        <SearchBar posts={posts} /> 
       </div>
     </div>
   )

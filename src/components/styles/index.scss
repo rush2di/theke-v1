@@ -304,15 +304,15 @@ nav {
         border: 1px solid #cacaca;        
         height: 450px;
         border-radius: 0.3rem;
-        color: $txt-second-color;
+        color: $txt-second-color-darker;
         font-size: 14px;
         grid-column: 3;
         margin-top: 2rem;
 
         .aside-box_tags,
-        .aside-box_recent {
-            margin: 1rem 0 1rem 2rem;
-            line-height: 1.5;
+        .aside-box_recent,
+        .aside-box_search {
+            @include aside-items();
         }
 
         span {
@@ -335,6 +335,14 @@ nav {
                 width: 85%;
             }
         }
+    }
+    a {
+    	color: inherit;
+    	text-decoration: none;
+    }
+    a:hover {
+    	color: $txt-prim-color;
+    	text-decoration: underline;
     }
 }
 
