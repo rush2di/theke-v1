@@ -4,7 +4,6 @@ import { graphql } from "gatsby"
 import RelativePosts from "../components/relativePosts"
 
 const BlogPost = props => {
-  console.log(props)
   const { html } = props.data.markdownRemark
   const { coverture, titre, tags } = props.data.markdownRemark.frontmatter
   const bgImage = !!coverture.childImageSharp
