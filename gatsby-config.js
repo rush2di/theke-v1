@@ -49,6 +49,7 @@ module.exports = {
         path: `${__dirname}/static/vedette`,
       },
     },
+    "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
     "gatsby-plugin-netlify-cms",
   ],
