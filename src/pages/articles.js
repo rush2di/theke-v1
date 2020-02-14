@@ -1,9 +1,10 @@
 import React from "react"
 import { ArticlePageLayout } from "../templates/articlePage"
-import {graphql, useStaticQuery} from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
+import { Helmet } from "react-helmet"
 
-const Articles = (props) => {
-	const data = useStaticQuery(graphql`
+const Articles = props => {
+  const data = useStaticQuery(graphql`
     {
       allMarkdownRemark(
         filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
@@ -33,9 +34,21 @@ const Articles = (props) => {
     }
   `)
 
-  return <ArticlePageLayout data={data.allMarkdownRemark} />
+  return (
+    <React.Fragment>
+      <Helmet>
+        <title>Articles | Theke</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content={"Articles | Theke"} />
+        <meta
+          property="og:description"
+          content={"Theke page des articles"}
+        />
+      </Helmet>
+      <ArticlePageLayout data={data.allMarkdownRemark} />
+    </React.Fragment>
+  )
 }
-
-
 
 export default Articles
