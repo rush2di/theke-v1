@@ -1,4 +1,7 @@
-import CMS from "netlify-cms-app"
+import CMS from 'netlify-cms-app';
+import { fr } from 'netlify-cms-locales';
+
+CMS.registerLocale('fr', fr);
 
 // export const TagsPreview = createClass({
 //   render: function() {

@@ -2,6 +2,7 @@ backend:
   name: github
   repo: rush2di/theke-v1
   branch: master
+  locale: 'fr'
 
 publish_mode: editorial_workflow
 media_folder: static/img
