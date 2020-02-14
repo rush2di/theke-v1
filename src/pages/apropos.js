@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import img1 from "../../static/assets/apropos-1.jpg"
 import img2 from "../../static/assets/apropos-2.jpg"
 import { Helmet } from "react-helmet"
-
+ 
 const Apropos = () => {
   return (
     <React.Fragment>

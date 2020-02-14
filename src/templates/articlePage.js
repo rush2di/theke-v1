@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import { PostsBoxs } from "../components/featuredPosts"
 import { Link, graphql } from "gatsby"
-
+ 
 export const ArticlePageLayout = ({ data }) => {
 	const tags = [
 		"science",

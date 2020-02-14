@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import PostsList from "../templates/postsList"
 import { Helmet } from "react-helmet"
-
+ 
 const Home = props => {
 	const { group, first, last, index, pageCount } = props.pageContext
 	return (

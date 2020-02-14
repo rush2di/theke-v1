@@ -2,7 +2,7 @@ import React from "react"
 import { ArticlePageLayout } from "../templates/articlePage"
 import { graphql, useStaticQuery } from "gatsby"
 import { Helmet } from "react-helmet"
-
+ 
 const Articles = props => {
   const data = useStaticQuery(graphql`
     {
