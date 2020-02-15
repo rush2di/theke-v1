@@ -95,7 +95,7 @@ collections:
   - name: "apropos"
     label: "A propos"
     folder: "static/apropos"
-    identifier_field: "informations"
+    identifier_field: "templateKey"
     create: true
     slug: "a-propos"
     editor: 
