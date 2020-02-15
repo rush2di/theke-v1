@@ -91,3 +91,32 @@ collections:
             default: select
             searchFields: ["titre"]
             valueField: "titre"
+
+  - name: "apropos"
+    label: "A propos"
+    folder: "static/apropos"
+    identifier_field: "informations"
+    create: true
+    slug: "a-propos"
+    editor: 
+      preview: false
+    fields:
+      -{
+        name: "templateKey"
+        label: "Template Key"
+        widget: "hidden"
+        default: "informations"
+      }
+      -name: "selection"
+       label: "Selection"
+       widget: "object"
+       fields: 
+        - { name: "aproposMini", label: "Description", widget: "text" }
+        - { name: "telephone", label: "Numero Telephone", widget: "text" }
+        - { name: "email", label: "Email Adresse", widget: "text" }
+        - { name: "facebook", label: "Url Facebook", widget: "text" }
+        - { name: "instagram", label: "Url Instagram", widget: "text" }
+        - { name: "image1", label: "Image 1", widget: "image" }
+        - { name: "paragraph1", label: "Paragraph 1", widget: "text" }
+        - { name: "image2", label: "Image 2", widget: "image" }
+        - { name: "paragraph2", label: "Paragraph 2", widget: "text" }
