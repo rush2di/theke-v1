@@ -540,10 +540,13 @@ nav {
     		font-weight: 400;
 		}
 		img {
+			object-fit: cover;
+			object-position: 50% 50%;
+			height: 350px;
 			width: 100%;
 			padding: 1rem;
-			margin: 0.5rem auto;
-			border-radius: 0.3rem;
+			margin: 0 auto 1rem;
+			border-radius: 1.3rem;
 		}
 		blockquote {
 			display: block;
@@ -552,14 +555,15 @@ nav {
 			border-color: #eee;
 			padding: 1.5em 0 0.5em;
 			margin: 1.5em 0;
+			text-align: center;
 			position: relative;
 			p, p:only-of-type, p:first-of-type {
 				color: $txt-second-color-darker;
 				margin: 1rem;
 				font-weight: 600;
-				font-family: "Muli", sans-serif;
-			}
-			p:last-of-type {				
+    			font-family: "Muli", sans-serif;
+    			font-size: .95em;
+    			&:last-of-type {				
 			    content: "\2013 \2003" attr(cite);
 			    display: block;
 			    font-style: italic;
@@ -573,6 +577,7 @@ nav {
 			    	content: "-";
 			    	margin: .3rem;
 			    }
+			}
 			}
 		}
 		blockquote:before {
