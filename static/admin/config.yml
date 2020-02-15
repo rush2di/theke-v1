@@ -101,10 +101,10 @@ collections:
     editor: 
       preview: false
     fields:
-      -{
-        name: "templateKey"
-        label: "Template Key"
-        widget: "hidden"
+      - {
+        name: "templateKey",
+        label: "Template Key",
+        widget: "hidden",
         default: "informations"
       }
       -name: "selection"
