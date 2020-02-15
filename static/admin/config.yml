@@ -54,7 +54,7 @@ collections:
   - name: "enVedette"
     label: "En vedette"
     folder: "static/vedette"
-    identifier_field: selection
+    identifier_field: templateKey
     create: false
     slug: "posts-en-vedette"
     editor:
@@ -96,7 +96,7 @@ collections:
     label: "A propos"
     folder: "static/apropos"
     identifier_field: "templateKey"
-    create: true
+    create: false
     slug: "a-propos"
     editor: 
       preview: false
