@@ -107,8 +107,8 @@ collections:
         widget: "hidden",
         default: "informations"
       }
-      - name: "selection"
-        label: "Selection"
+      - name: "informations"
+        label: "informations"
         widget: "object"
         fields: 
          - { name: "aproposMini", label: "Description", widget: "text" }
