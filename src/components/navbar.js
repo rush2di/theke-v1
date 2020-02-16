@@ -42,9 +42,9 @@ const Navbar = ({ activeNavItem2, activeNavItem1 }) => {
         </ul>
       </div>
       <div className="nav_small-vp">
-        <button onClick={handleClick} class="hamburger hamburger--spin" type="button">
-          <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
+        <button onClick={handleClick} className={`hamburger hamburger--spin ${!!state && "is-active"}`} type="button">
+          <span className="hamburger-box">
+            <span className="hamburger-inner"></span>
           </span>
         </button>
         <div className="nav_small-vp--items">

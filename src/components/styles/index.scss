@@ -269,7 +269,7 @@ nav {
 		transform: scale(1.035);
 		box-shadow: 0px 5px 15px #0000007d;
 		.over-box {
-			transform: translateY(-1.1rem);
+			transform: translateY(-1rem);
 		}
 		span {
 			bottom: 0;
@@ -287,7 +287,7 @@ nav {
 	}
 
 	.over-box {
-		transition: $easingElasticStart;
+		transition: $easingOut;
 		transform: translateY(0rem);
 		color: white;
 		position: absolute;
@@ -322,7 +322,7 @@ nav {
 	span {
 		cursor: pointer;
 		position: absolute;
-		background: $txt-prim-color;
+		background: $postBoxs-bg;
 		color: white;
 		padding: 0.5rem;
 		font-size: 0.85rem;

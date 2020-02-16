@@ -39,7 +39,17 @@ const FeaturedPosts = ({ posts }) => {
     <div className="featured-posts">
       {!!filtredPosts &&
         filtredPosts.map(post => {
-          return <PostsBoxs key={`card_${post.node.id}`} post={post} />
+          const { titre, description, coverture } = post.node.frontmatter
+          const { slug } = post.node.fields
+          return (
+            <PostsBoxs
+              key={`card_${post.node.id}`}
+              titre={titre}
+              description={description}
+              coverture={coverture}
+              slug={slug}
+            />
+          )
         })}
     </div>
   )
@@ -47,21 +57,25 @@ const FeaturedPosts = ({ posts }) => {
 
 export default FeaturedPosts
 
-export const PostsBoxs = ({ post }) => {
+export const PostsBoxs = ({ titre, description, coverture, slug }) => {
   return (
     <div
       className="post-box"
       style={{
-        backgroundImage: `url(${post.node.frontmatter.coverture.childImageSharp.fluid.src})`,
+        backgroundImage: `url(${
+          !!coverture.childImageSharp
+            ? coverture.childImageSharp.fluid.src
+            : coverture
+        })`,
       }}
     >
       <div className="over-box">
-        <h3>{post.node.frontmatter.titre}</h3>
-        <p>{post.node.frontmatter.description}</p>
+        <h3>{titre}</h3>
+        <p>{description}</p>
       </div>
-        <Link to={`/article/${post.node.fields.slug}`}>
+      <Link to={`/article/${slug}`}>
         <span>lire la suite &#8594;</span>
-        </Link>
+      </Link>
     </div>
   )
 }
