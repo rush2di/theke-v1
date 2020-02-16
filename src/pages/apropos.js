@@ -1,10 +1,9 @@
 import React from "react"
 import Layout from "../components/layout"
-import img1 from "../../static/assets/apropos-1.jpg"
-import img2 from "../../static/assets/apropos-2.jpg"
 import { Helmet } from "react-helmet"
  
-const Apropos = () => {
+const Apropos = (props) => {
+  console.log(props)
   return (
     <React.Fragment>
       <Helmet>
@@ -23,7 +22,7 @@ const Apropos = () => {
           <div className="grid-table">
             <div
               className="left about-img"
-              style={{ backgroundImage: `url(${img1})`, gridArea: "img1" }}
+              style={{ backgroundImage: `url()`, gridArea: "img1" }}
               alt="apropos1"
             />
             <p style={{ gridArea: "txt1" }}>
@@ -54,7 +53,7 @@ const Apropos = () => {
             </p>
             <div
               className="right about-img"
-              style={{ backgroundImage: `url(${img2})`, gridArea: "img2" }}
+              style={{ backgroundImage: `url()`, gridArea: "img2" }}
               alt="apropos2"
             />
           </div>

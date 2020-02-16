@@ -49,6 +49,13 @@ module.exports = {
         path: `${__dirname}/static/vedette`,
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "aPropos",
+        path: `${__dirname}/static/apropos`,
+      },
+    },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
     {
