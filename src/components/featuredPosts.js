@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 const FeaturedPosts = ({ posts }) => {
   const vedette = useStaticQuery(graphql`
@@ -59,6 +59,9 @@ export const PostsBoxs = ({ post }) => {
         <h3>{post.node.frontmatter.titre}</h3>
         <p>{post.node.frontmatter.description}</p>
       </div>
+        <Link to={`/article/${post.node.fields.slug}`}>
+        <span>lire la suite &#8594;</span>
+        </Link>
     </div>
   )
 }

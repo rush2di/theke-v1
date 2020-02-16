@@ -163,12 +163,26 @@ nav {
 	justify-content: center;
 
 	.post-box {
+		transition: $easingOut;
+		transform: scale(1);
 		background-size: cover;
 		width: 100%;
-		box-shadow: 1px 1px 10px #0000007d;
+		box-shadow: 0px 2px 10px #000000c7;
 		height: 17rem;
+		overflow: hidden;
 		border-radius: 0.35rem;
 		position: relative;
+	}
+
+	.post-box:hover {
+		transform: scale(1.035);
+		box-shadow: 0px 5px 15px #0000007d;
+		.over-box{
+			transform: translateY(-1.1rem);
+		}
+		span {
+			bottom: 0
+		}
 	}
 
 	.post-box:after {
@@ -182,6 +196,8 @@ nav {
 	}
 
 	.over-box {
+		transition: $easingElasticStart;
+		transform: translateY(0rem);
 		color: white;
 		position: absolute;
 		margin: 0 2.5rem;
@@ -211,6 +227,20 @@ nav {
 			white-space: nowrap;
 			text-overflow: ellipsis;
 		}
+	}	
+	span {
+		cursor: pointer;
+		position: absolute;
+	    background: $txt-prim-color;
+	    color: white;
+	    padding: .5rem;
+	    font-size: .85rem;
+	    bottom: -2rem;
+	    z-index: 5;
+	    right: 0;
+	    border-bottom-right-radius: .3rem;
+	    border-top-left-radius: .3rem;
+	    transition: $easingElasticStart;
 	}
 }
 
@@ -515,6 +545,10 @@ nav {
 	.article_body {
 		margin: 1.5rem 1rem;
 		line-height: 1.6;
+
+		pre {
+			margin-bottom: 1rem;
+		}
 
 		h1 {
 			margin: 0 0 1rem;
