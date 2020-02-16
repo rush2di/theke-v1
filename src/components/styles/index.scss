@@ -652,6 +652,14 @@ nav {
 	}
 }
 
+.articles_msg {
+	display: block;
+    text-align: center;
+    font-size: 1.10rem;
+    font-weight: 400;
+    color: $txt-second-color;
+}
+
 @media (max-width: 1200px) {
 	.container {
 		width: 90vw;

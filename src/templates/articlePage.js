@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import { PostsBoxs } from "../components/featuredPosts"
 import { Link, graphql } from "gatsby"
- 
+
 export const ArticlePageLayout = ({ data }) => {
 	const tags = [
 		"science",
@@ -45,12 +45,14 @@ export const ArticlePageLayout = ({ data }) => {
 				</ul>
 			</nav>
 			<div className="featured-posts">
-				{!!data.edges.length
-					? data.edges.map(post => {
-							return <PostsBoxs post={post} />
-					  })
-					: "aucun résultats n'a été trouvé"}
+				{!!data.edges.length &&
+					data.edges.map(post => <PostsBoxs post={post} />)}
 			</div>
+			{!!data.edges.length || (
+				<div className="articles_msg">
+					Opps! Aucun article n'est actuellement disponible pour cette catégorie
+				</div>
+			)}
 		</Layout>
 	)
 }
