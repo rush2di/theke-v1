@@ -69,6 +69,97 @@ nav {
 	.theke:hover {
 		opacity: 0.6;
 	}
+
+	.hamburger {
+		padding: 15px 15px;
+		display: inline-block;
+		cursor: pointer;
+		transition-property: opacity, filter;
+		transition-duration: 0.15s;
+		transition-timing-function: linear;
+		font: inherit;
+		color: inherit;
+		text-transform: none;
+		background-color: transparent;
+		border: 0;
+		margin: 0;
+		overflow: visible;
+	}
+	.hamburger:hover {
+		opacity: 0.7;
+	}
+	.hamburger.is-active:hover {
+		opacity: 0.7;
+	}
+	.hamburger.is-active .hamburger-inner,
+	.hamburger.is-active .hamburger-inner::before,
+	.hamburger.is-active .hamburger-inner::after {
+		background-color: $hamburgerBg;
+	}
+
+	.hamburger-box {
+		width: 40px;
+		height: 24px;
+		display: inline-block;
+		position: relative;
+	}
+
+	.hamburger-inner {
+		display: block;
+		top: 50%;
+		margin-top: -2px;
+	}
+	.hamburger-inner,
+	.hamburger-inner::before,
+	.hamburger-inner::after {
+		width: 40px;
+		height: 4px;
+		background-color: $hamburgerBg;
+		border-radius: 4px;
+		position: absolute;
+		transition-property: transform;
+		transition-duration: 0.15s;
+		transition-timing-function: ease;
+	}
+	.hamburger-inner::before,
+	.hamburger-inner::after {
+		content: "";
+		display: block;
+	}
+	.hamburger-inner::before {
+		top: -10px;
+	}
+	.hamburger-inner::after {
+		bottom: -10px;
+	}
+	.hamburger--spin .hamburger-inner {
+		transition-duration: 0.22s;
+		transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	}
+	.hamburger--spin .hamburger-inner::before {
+		transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+	}
+	.hamburger--spin .hamburger-inner::after {
+		transition: bottom 0.1s 0.25s ease-in,
+			transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	}
+
+	.hamburger--spin.is-active .hamburger-inner {
+		transform: rotate(225deg);
+		transition-delay: 0.12s;
+		transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+	.hamburger--spin.is-active .hamburger-inner::before {
+		top: 0;
+		opacity: 0;
+		transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+	}
+	.hamburger--spin.is-active .hamburger-inner::after {
+		bottom: 0;
+		transform: rotate(-90deg);
+		transition: bottom 0.1s ease-out,
+			transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
 }
 
 //////////////////////////////////////////////////////////////////
@@ -177,11 +268,11 @@ nav {
 	.post-box:hover {
 		transform: scale(1.035);
 		box-shadow: 0px 5px 15px #0000007d;
-		.over-box{
+		.over-box {
 			transform: translateY(-1.1rem);
 		}
 		span {
-			bottom: 0
+			bottom: 0;
 		}
 	}
 
@@ -227,20 +318,20 @@ nav {
 			white-space: nowrap;
 			text-overflow: ellipsis;
 		}
-	}	
+	}
 	span {
 		cursor: pointer;
 		position: absolute;
-	    background: $txt-prim-color;
-	    color: white;
-	    padding: .5rem;
-	    font-size: .85rem;
-	    bottom: -2rem;
-	    z-index: 5;
-	    right: 0;
-	    border-bottom-right-radius: .3rem;
-	    border-top-left-radius: .3rem;
-	    transition: $easingElasticStart;
+		background: $txt-prim-color;
+		color: white;
+		padding: 0.5rem;
+		font-size: 0.85rem;
+		bottom: -2rem;
+		z-index: 5;
+		right: 0;
+		border-bottom-right-radius: 0.3rem;
+		border-top-left-radius: 0.3rem;
+		transition: $easingElasticStart;
 	}
 }
 
@@ -571,7 +662,7 @@ nav {
 			color: $txt-second-color;
 			margin-bottom: 1rem;
 			font-size: 0.95rem;
-    		font-weight: 400;
+			font-weight: 400;
 		}
 		img {
 			object-fit: cover;
@@ -591,31 +682,33 @@ nav {
 			margin: 1.5em 0;
 			text-align: center;
 			position: relative;
-			p, p:only-of-type, p:first-of-type {
+			p,
+			p:only-of-type,
+			p:first-of-type {
 				color: $txt-second-color-darker;
 				margin: 1rem;
 				font-weight: 600;
-    			font-family: "Muli", sans-serif;
-    			font-size: .95em;
-    			&:last-of-type {				
-			    content: "\2013 \2003" attr(cite);
-			    display: block;
-			    font-style: italic;
-			    font-weight: 500;
-			    text-align: right;
-			    text-transform: capitalize;
-			    font-size: 0.875em;
-			    margin: 0 2rem;
-			    color: #e74c3c;
-			    &::before {
-			    	content: "-";
-			    	margin: .3rem;
-			    }
-			}
+				font-family: "Muli", sans-serif;
+				font-size: 0.95em;
+				&:last-of-type {
+					content: "\2013 \2003"attr(cite);
+					display: block;
+					font-style: italic;
+					font-weight: 500;
+					text-align: right;
+					text-transform: capitalize;
+					font-size: 0.875em;
+					margin: 0 2rem;
+					color: #e74c3c;
+					&::before {
+						content: "-";
+						margin: 0.3rem;
+					}
+				}
 			}
 		}
 		blockquote:before {
-			content: '\201C';
+			content: "\201C";
 			position: absolute;
 			top: 0em;
 			left: 50%;
@@ -623,24 +716,25 @@ nav {
 			background: #fff;
 			width: 3rem;
 			height: 2rem;
-			font: 6em/1.08em 'PT Sans', sans-serif;
+			font: 6em/1.08em "PT Sans", sans-serif;
 			color: #666;
 			text-align: center;
 		}
-		ul, ol {
+		ul,
+		ol {
 			margin: 0 1rem 1rem;
-    		color: $txt-second-color-darker;
-    		font-weight: 500;
+			color: $txt-second-color-darker;
+			font-weight: 500;
 		}
 		code {
 			background: #2d3b41;
-		    color: #f2f3f3;
-		    padding: .5rem;
-		    border-radius: .3rem;
+			color: #f2f3f3;
+			padding: 0.5rem;
+			border-radius: 0.3rem;
 		}
 		a {
 			color: #2d7ee2;
-    		font-weight: 400;
+			font-weight: 400;
 		}
 	}
 }
@@ -688,10 +782,10 @@ nav {
 
 .articles_msg {
 	display: block;
-    text-align: center;
-    font-size: 1.10rem;
-    font-weight: 400;
-    color: $txt-second-color;
+	text-align: center;
+	font-size: 1.1rem;
+	font-weight: 400;
+	color: $txt-second-color;
 }
 
 @media (max-width: 1200px) {

@@ -1,8 +1,12 @@
-import React from "react"
+import React,{useState,useEffect} from "react"
 import { Link } from "gatsby"
 import thekeLogo from "../../static/thekeLogo.svg"
 
-const Navbar = ({activeNavItem2, activeNavItem1}) => {
+const Navbar = ({ activeNavItem2, activeNavItem1 }) => {
+  const [state,setState] = useState(false)
+  const handleClick = () => setState(!state) 
+  console.log(state)
+
   return (
     <nav>
       <div className="theke">
@@ -10,23 +14,67 @@ const Navbar = ({activeNavItem2, activeNavItem1}) => {
           <img src={thekeLogo} alt="theke" />
         </Link>
       </div>
-      <ul>
-        <li>
-          <Link className={activeNavItem1===true ? "active": ""} activeClassName="active" to="/">
-            accueil
-          </Link>
-        </li>
-        <li>
-          <Link className={activeNavItem2===true ? "active": ""} activeClassName="active" to="/articles">
-            articles
-          </Link>
-        </li>
-        <li>
-          <Link activeClassName="active" to="/apropos">
-            à propos
-          </Link>
-        </li>
-      </ul>
+      <div className="nav_large-vp">
+        <ul>
+          <li>
+            <Link
+              className={activeNavItem1 === true ? "active" : ""}
+              activeClassName="active"
+              to="/"
+            >
+              accueil
+            </Link>
+          </li>
+          <li>
+            <Link
+              className={activeNavItem2 === true ? "active" : ""}
+              activeClassName="active"
+              to="/articles"
+            >
+              articles
+            </Link>
+          </li>
+          <li>
+            <Link activeClassName="active" to="/apropos">
+              à propos
+            </Link>
+          </li>
+        </ul>
+      </div>
+      <div className="nav_small-vp">
+        <button onClick={handleClick} class="hamburger hamburger--spin" type="button">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+        <div className="nav_small-vp--items">
+          <ul>
+            <li>
+              <Link
+                className={activeNavItem1 === true ? "active" : ""}
+                activeClassName="active"
+                to="/"
+              >
+                accueil
+              </Link>
+            </li>
+            <li>
+              <Link
+                className={activeNavItem2 === true ? "active" : ""}
+                activeClassName="active"
+                to="/articles"
+              >
+                articles
+              </Link>
+            </li>
+            <li>
+              <Link activeClassName="active" to="/apropos">
+                à propos
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
   )
 }
