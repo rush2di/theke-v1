@@ -36,7 +36,7 @@ const FeaturedPosts = ({ posts }) => {
   })
 
   return (
-    <div className="featured-posts">
+    <div className="featured-posts --handle-sm-vp">
       {!!filtredPosts &&
         filtredPosts.map(post => {
           const { titre, description, coverture } = post.node.frontmatter
@@ -59,23 +59,22 @@ export default FeaturedPosts
 
 export const PostsBoxs = ({ titre, description, coverture, slug }) => {
   return (
-    <div
-      className="post-box"
-      style={{
-        backgroundImage: `url(${
-          !!coverture.childImageSharp
-            ? coverture.childImageSharp.fluid.src
-            : coverture
-        })`,
-      }}
-    >
-      <div className="over-box">
-        <h3>{titre}</h3>
-        <p>{description}</p>
+    <Link to={`/article/${slug}`}>
+      <div
+        className="post-box"
+        style={{
+          backgroundImage: `url(${
+            !!coverture.childImageSharp
+              ? coverture.childImageSharp.fluid.src
+              : coverture
+          })`,
+        }}
+      >
+        <div className="over-box">
+          <h3>{titre}</h3>
+          <p>{description}</p>
+        </div>
       </div>
-      <Link to={`/article/${slug}`}>
-        <span>lire la suite &#8594;</span>
-      </Link>
-    </div>
+    </Link>
   )
 }

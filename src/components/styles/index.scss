@@ -25,7 +25,7 @@ body {
 //// I- Layout //// Navbar Styles ////////////////////////////////
 //////////////////////////////////////////////////////////////////
 
-nav {
+.nav_primary {
 	display: flex;
 	width: 100%;
 	height: 4.5rem;
@@ -323,18 +323,10 @@ nav {
 		border-radius: 0.35rem;
 		position: relative;
 	}
-
 	.post-box:hover {
 		transform: scale(1.035);
 		box-shadow: 0px 5px 15px #0000007d;
-		.over-box {
-			transform: translateY(-1rem);
-		}
-		span {
-			bottom: 0;
-		}
 	}
-
 	.post-box:after {
 		content: "";
 		width: 100%;
@@ -391,6 +383,44 @@ nav {
 		border-bottom-right-radius: 0.3rem;
 		border-top-left-radius: 0.3rem;
 		transition: $easingElasticStart;
+	}
+
+	@include media ("<desktop") {
+		margin: 1.5rem 1rem 2.5rem;
+		.post-box {
+			height: 16rem;
+		}
+	}
+
+	@include media("<=980px", ">=800px") {
+		grid-template-columns: 1fr 1fr;
+		a:nth-child(3) {
+			display: none !important;
+		}
+	}
+	@include media("<=800px") {
+		grid-template-columns: 1fr;
+		a:nth-child(2),
+		a:nth-child(3) {
+			display: none !important;
+		}
+	}
+	@include media("<=tablet") {
+		.post-box {
+			height: 15.5rem;
+			.over-box {
+				transform: translateY(-1rem);
+			}
+		}
+	}
+	@include media("<=phoneL") {
+		margin: 1rem 0.5rem 3.5rem;
+		.post-box {
+			height: 12rem;
+			.over-box {
+				margin: 0 1.25rem;
+			}
+		}
 	}
 }
 
@@ -847,13 +877,18 @@ nav {
 	color: $txt-second-color;
 }
 
-@media (max-width: 1200px) {
-	.container {
+.container {
+	@include media("<=1200px") {
 		width: 90vw;
 		min-height: 100vh;
 	}
+	@include media("<=phoneL") {
+		width: 95vw;
+	}
+}
 
-	.section {
+.section {
+	@include media("<=1200px") {
 		margin: 0 0 10rem;
 	}
 }

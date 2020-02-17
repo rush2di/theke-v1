@@ -8,7 +8,7 @@ const Navbar = ({ activeNavItem2, activeNavItem1 }) => {
   const resetNav = () => !!state && setState(false)
 
   return (
-    <nav>
+    <nav className="nav_primary">
       <div className="theke">
         <Link to="/">
           <img src={thekeLogo} alt="theke" />
