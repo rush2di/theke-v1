@@ -1,11 +1,11 @@
-import React,{useState,useEffect} from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import thekeLogo from "../../static/thekeLogo.svg"
 
 const Navbar = ({ activeNavItem2, activeNavItem1 }) => {
-  const [state,setState] = useState(false)
-  const handleClick = () => setState(!state) 
-  console.log(state)
+  const [state, setState] = useState(false)
+  const handleClick = () => setState(!state)
+  const resetNav = () => !!state && setState(false)
 
   return (
     <nav>
@@ -42,13 +42,20 @@ const Navbar = ({ activeNavItem2, activeNavItem1 }) => {
         </ul>
       </div>
       <div className="nav_small-vp">
-        <button onClick={handleClick} className={`hamburger hamburger--spin ${!!state && "is-active"}`} type="button">
+        <button
+          onClick={handleClick}
+          className={`hamburger hamburger--spin ${!!state ? "is-active" : ""}`}
+          type="button"
+        >
           <span className="hamburger-box">
             <span className="hamburger-inner"></span>
           </span>
         </button>
-        <div className="nav_small-vp--items">
-          <ul>
+        <div className={`nav_small-vp--items ${!!state ? "" : "hidden"}`}>
+          <ul
+            onWheel={resetNav}
+            className={!!state ? "nav_small-vp--items--active" : ""}
+          >
             <li>
               <Link
                 className={activeNavItem1 === true ? "active" : ""}

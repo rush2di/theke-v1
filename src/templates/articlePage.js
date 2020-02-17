@@ -25,7 +25,7 @@ export const ArticlePageLayout = ({ data }) => {
 	const tagsList = tags.map((tag, i) => {
 		return (
 			<li key={"tag_" + i}>
-				<Link activeClassName="active" to={`articles/${tag}`}>
+				<Link activeClassName="active" to={`/articles/${tag}`}>
 					{tag}
 				</Link>
 			</li>
@@ -37,7 +37,7 @@ export const ArticlePageLayout = ({ data }) => {
 			<nav className="articles_nav">
 				<ul>
 					<li>
-						<Link activeClassName="active" to="articles">
+						<Link activeClassName="active" to="/articles">
 							tout
 						</Link>
 					</li>
@@ -46,7 +46,19 @@ export const ArticlePageLayout = ({ data }) => {
 			</nav>
 			<div className="featured-posts">
 				{!!data.edges.length &&
-					data.edges.map(post => <PostsBoxs post={post} />)}
+					data.edges.map(post => {
+						const { titre, description, coverture } = post.node.frontmatter
+						const { slug } = post.node.fields
+						return (
+							<PostsBoxs
+								key={`key_${post.node.id}`}
+								titre={titre}
+								description={description}
+								coverture={coverture}
+								slug={slug}
+							/>
+						)
+					})}
 			</div>
 			{!!data.edges.length || (
 				<div className="articles_msg">
@@ -69,6 +81,7 @@ export const pageQuery = graphql`
 		allMarkdownRemark(filter: { frontmatter: { tags: { eq: $tag } } }) {
 			edges {
 				node {
+					id
 					fields {
 						slug
 					}

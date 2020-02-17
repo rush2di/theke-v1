@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Muli:500,700,800,900&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap");
+@import "./include-media";
 @import "./variables";
 @import "./mixins";
 
@@ -30,6 +31,7 @@ nav {
 	height: 4.5rem;
 	align-items: center;
 	justify-content: space-between;
+	position: relative;
 
 	ul {
 		list-style: none;
@@ -51,13 +53,15 @@ nav {
 			color: $txt-second-color;
 		}
 
-		.active::after {
-			display: block;
-			content: "";
-			width: 2rem;
-			height: 0.3rem;
-			margin: 0.2rem auto 0;
-			background: $footer-bg;
+		@include media(">tablet") {
+			.active::after {
+				display: block;
+				content: "";
+				width: 2rem;
+				height: 0.3rem;
+				margin: 0.2rem auto 0;
+				background: $footer-bg;
+			}
 		}
 	}
 
@@ -68,6 +72,12 @@ nav {
 
 	.theke:hover {
 		opacity: 0.6;
+	}
+	.nav_large-vp {
+		display: block;
+	}
+	.nav_small-vp {
+		display: none;
 	}
 
 	.hamburger {
@@ -83,6 +93,7 @@ nav {
 		background-color: transparent;
 		border: 0;
 		margin: 0;
+		outline: none;
 		overflow: visible;
 	}
 	.hamburger:hover {
@@ -98,7 +109,7 @@ nav {
 	}
 
 	.hamburger-box {
-		width: 40px;
+		width: 30px;
 		height: 24px;
 		display: inline-block;
 		position: relative;
@@ -112,7 +123,7 @@ nav {
 	.hamburger-inner,
 	.hamburger-inner::before,
 	.hamburger-inner::after {
-		width: 40px;
+		width: 30px;
 		height: 4px;
 		background-color: $hamburgerBg;
 		border-radius: 4px;
@@ -159,6 +170,54 @@ nav {
 		transform: rotate(-90deg);
 		transition: bottom 0.1s ease-out,
 			transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+
+	@include media("<=tablet") {
+		.nav_large-vp {
+			display: none;
+		}
+		.nav_small-vp {
+			display: block;
+			&--items {
+				position: absolute;
+				z-index: 10;
+				height: calc(3.5rem * 4);
+				left: 0;
+				overflow: hidden;
+				right: 0;
+				width: 100%;
+				transition: $easingOut;
+				&--active {
+					transform: translateY(0rem);
+					opacity: 1;
+				}
+			}
+			.hidden {
+				z-index: 0;
+			}
+		}
+		ul {
+			list-style: none;
+			display: flex;
+			flex-direction: column;
+			opacity: 0;
+			transform: translateY(-15rem);
+			text-align: center;
+			background: #ffffff;
+			box-shadow: 0px 27px 20px -20px #00000080;
+			transition: $easingOut;
+			li {
+				font-family: "Muli", sans-serif;
+				font-weight: 700;
+				padding: 1rem 0 1.5rem;
+			}
+		}
+		.active {
+			color: $txt-link-color;
+			&::after {
+				display: none;
+			}
+		}
 	}
 }
 
@@ -322,9 +381,9 @@ nav {
 	span {
 		cursor: pointer;
 		position: absolute;
-		background: $postBoxs-bg;
+		background: $txt-prim-color;
 		color: white;
-		padding: 0.5rem;
+		padding: 0.5rem 2.7rem;
 		font-size: 0.85rem;
 		bottom: -2rem;
 		z-index: 5;
