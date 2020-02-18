@@ -36,7 +36,7 @@ const FeaturedPosts = ({ posts }) => {
   })
 
   return (
-    <div className="featured-posts --handle-sm-vp">
+    <div className="featured-posts --handle-sm-vp --featured">
       {!!filtredPosts &&
         filtredPosts.map(post => {
           const { titre, description, coverture } = post.node.frontmatter
@@ -48,6 +48,7 @@ const FeaturedPosts = ({ posts }) => {
               description={description}
               coverture={coverture}
               slug={slug}
+              featured={true}
             />
           )
         })}
@@ -57,9 +58,15 @@ const FeaturedPosts = ({ posts }) => {
 
 export default FeaturedPosts
 
-export const PostsBoxs = ({ titre, description, coverture, slug }) => {
+export const PostsBoxs = ({
+  titre,
+  description,
+  coverture,
+  slug,
+  featured,
+}) => {
   return (
-    <Link to={`/article/${slug}`}>
+    <Link to={`/article${slug}`}>
       <div
         className="post-box"
         style={{
@@ -70,6 +77,7 @@ export const PostsBoxs = ({ titre, description, coverture, slug }) => {
           })`,
         }}
       >
+        {!!featured && <span>featured post</span>}
         <div className="over-box">
           <h3>{titre}</h3>
           <p>{description}</p>

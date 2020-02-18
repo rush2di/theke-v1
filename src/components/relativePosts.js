@@ -57,7 +57,17 @@ const RelativePosts = ({ targetTags, title }) => {
         </h3>
         <div className="featured-posts">
           {postsArr.map(post => {
-            return <PostsBoxs post={post} />
+            const { titre, description, coverture } = post.node.frontmatter
+            const { slug } = post.node.fields
+            return (
+              <PostsBoxs
+                key={`card_${post.node.id}`}
+                titre={titre}
+                description={description}
+                coverture={coverture}
+                slug={slug}
+              />
+            )
           })}
         </div>
       </div>

@@ -51,10 +51,9 @@ const Navbar = ({ activeNavItem2, activeNavItem1 }) => {
             <span className="hamburger-inner"></span>
           </span>
         </button>
-        <div className={`nav_small-vp--items ${!!state ? "" : "hidden"}`}>
+        <div className={`nav_small-vp--items ${!!state ? "--active" : ""}`}>
           <ul
             onWheel={resetNav}
-            className={!!state ? "nav_small-vp--items--active" : ""}
           >
             <li>
               <Link
