@@ -2,21 +2,24 @@ import React from "react"
 import { Link } from "gatsby"
 
 const Pagination = ({ first, last, index, pageCount }) => {
+	const prevPageLogic = index === 2 ? "/" : `/${(index - 1).toString()}`
+	const secPageLogic = `/${(index + 1).toString()}`
 	return (
 		<div className="pagination">
 			{!!first || (
-				<Link
-					className="arrow"
-					to={index === 2 ? "/" : `/${(index - 1).toString()}`}
-				>
-					&#8249;
-				</Link>
+				<div className="pagination_number--box">
+					<Link className="arrow" to={prevPageLogic}>
+						&#8249;
+					</Link>
+				</div>
 			)}
 			<PageNums index={index} pageCount={pageCount} />
 			{!!last || (
-				<Link className="arrow" to={`/${(index + 1).toString()}`}>
-					&#8250;
-				</Link>
+				<div className="pagination_number--box">
+					<Link className="arrow" to={secPageLogic}>
+						&#8250;
+					</Link>
+				</div>
 			)}
 		</div>
 	)
@@ -24,10 +27,6 @@ const Pagination = ({ first, last, index, pageCount }) => {
 
 export default Pagination
 
-// if index dont show left arrow, if last don't show right arrow
-// while lastpage is less than 5 render a list from 1 to lastpage index
-// if last page is bigger than 5 render 1 to 3 ... 9 10 then if now index is 3 render 3 4 5 .. 9 10
-// then make a check if index + 3 >= lastpage - 3 if true render loop from index to lastpage
 const PageNums = ({ index, pageCount }) => {
 	const range = (from, to, step = 1) => {
 		let i = from
@@ -62,7 +61,7 @@ const listItem = callBackRange => {
 								activeClassName="active-link"
 								to={num === 1 ? "/" : `/${num}`}
 							>
-								{num}
+								<div className="pagination_number--box">{num}</div>
 							</Link>
 						</li>
 					)
