@@ -1,11 +1,12 @@
 import React from "react"
 import Navbar from "./navbar"
 import Footer from "./footer"
+import InfoContextProvider from "./infoContext"
 import "./styles/index.scss"
 
 const Layout = props => {
 	return (
-		<React.Fragment>
+		<InfoContextProvider>
 			<div className="container">
 				<Navbar
 					activeNavItem1={!!props.activeNavItem1}
@@ -14,7 +15,7 @@ const Layout = props => {
 				{props.children}
 			</div>
 			<Footer />
-		</React.Fragment>
+		</InfoContextProvider>
 	)
 }
 

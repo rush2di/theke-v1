@@ -1,6 +1,8 @@
-import React, { useState } from "react"
-import Autosuggest from 'react-autosuggest'
+import React, { useState, useContext } from "react"
+import Autosuggest from "react-autosuggest"
 import { Link, navigate } from "gatsby"
+import { InfoContext } from "./infoContext"
+import { Social } from "./footer"
 
 const Aside = ({ posts }) => {
   const recentPosts = posts.slice(0, 4).map((edge, i) => {
@@ -12,6 +14,11 @@ const Aside = ({ posts }) => {
       </li>
     )
   })
+
+  const { informations } = useContext(InfoContext)
+  const { facebook, instagram } = informations
+
+  console.log(facebook,instagram)
 
   return (
     <div className="aside-box">
@@ -27,8 +34,15 @@ const Aside = ({ posts }) => {
       </div>
       <div className="aside-box_search">
         <span>recherche</span>
-        <SearchBar posts={posts} /> 
+        <SearchBar posts={posts} />
       </div>
+      {!!instagram && (
+          <div className="aside-box_social">
+            <span>suivez nous sur</span>
+            <Social facebook={facebook} instagram={instagram} />
+          </div>
+        )
+      }
     </div>
   )
 }
@@ -50,14 +64,14 @@ export const FiltredTags = ({ posts }) => {
 }
 
 export const SearchBar = ({ posts }) => {
-  const [value, setValue] = useState("");
-  const [suggestions, setSuggestions] = useState([]);
+  const [value, setValue] = useState("")
+  const [suggestions, setSuggestions] = useState([])
 
   const postsData = posts.map(post => {
-    return { 
-    name: post.node.frontmatter.titre,
-    slug: post.node.fields.slug,
-    tags: post.node.frontmatter.tags
+    return {
+      name: post.node.frontmatter.titre,
+      slug: post.node.fields.slug,
+      tags: post.node.frontmatter.tags,
     }
   })
 
@@ -65,9 +79,14 @@ export const SearchBar = ({ posts }) => {
     const inputValue = value.trim().toLowerCase()
     const inputLength = inputValue.length
 
-    return inputLength === 0 ? [] : postsData.filter( post =>{
-    return post.name.search(inputValue) !== -1 || post.tags.includes(inputValue)
-    })
+    return inputLength === 0
+      ? []
+      : postsData.filter(post => {
+          return (
+            post.name.search(inputValue) !== -1 ||
+            post.tags.includes(inputValue)
+          )
+        })
   }
 
   const getSuggestionValue = suggestion => {
@@ -78,12 +97,12 @@ export const SearchBar = ({ posts }) => {
     return suggestion.name
   }
 
-  const handleChange = (_, {newValue}) => {
+  const handleChange = (_, { newValue }) => {
     setValue(newValue)
   }
 
-  const onSuggestionsFetchRequested = ({value}) => {
-    setValue(value);
+  const onSuggestionsFetchRequested = ({ value }) => {
+    setValue(value)
     setSuggestions(getSuggestions(value))
   }
 
@@ -91,16 +110,16 @@ export const SearchBar = ({ posts }) => {
     setSuggestions([])
   }
 
-  const onSuggestionSelected = (_ ,{suggestion}) => {
+  const onSuggestionSelected = (_, { suggestion }) => {
     navigate(`article${suggestion.slug}`)
   }
 
   const inputProps = {
-    placeholder: 'recherche',
+    placeholder: "recherche",
     value,
-    onChange: handleChange
+    onChange: handleChange,
   }
-  
+
   return (
     <Autosuggest
       suggestions={suggestions}
@@ -110,6 +129,6 @@ export const SearchBar = ({ posts }) => {
       renderSuggestion={renderSuggestion}
       inputProps={inputProps}
       onSuggestionSelected={onSuggestionSelected}
-      />
-    )
+    />
+  )
 }

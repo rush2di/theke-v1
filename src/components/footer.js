@@ -1,40 +1,19 @@
-import React from "react"
+import React, { useContext } from "react"
 import thekeLogo from "../../static/thekeLogo.svg"
 import { Link } from "gatsby"
 import iconFb from "../../static/assets/facebook.svg"
 import iconIg from "../../static/assets/instagram.svg"
-import { useStaticQuery, graphql } from "gatsby"
+import { InfoContext } from "./infoContext"
 
-const Footer = () => {
-  const data = useStaticQuery(graphql`
-    {
-      allMarkdownRemark(
-        filter: { frontmatter: { templateKey: { eq: "informations" } } }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              informations {
-                aproposMini
-                email
-                telephone
-                facebook
-                instagram
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-
+const Footer = props => {
+  const { informations } = useContext(InfoContext)
   const {
     aproposMini,
     email,
     telephone,
     facebook,
     instagram,
-  } = data.allMarkdownRemark.edges[0].node.frontmatter.informations
+  } = informations
 
   return (
     <FooterLayoutPreview
@@ -46,8 +25,6 @@ const Footer = () => {
     />
   )
 }
-
-export default Footer
 
 export const FooterLayoutPreview = ({
   apropos,
@@ -74,24 +51,33 @@ export const FooterLayoutPreview = ({
           <h3>contactez nous</h3>
           <span>{telephone}</span>
           <span>{email}</span>
-          <div className="social">
-            {!!instagram && (
-              <span>
-                <a href={instagram}>
-                  <img src={iconIg} alt="instagram" />
-                </a>
-              </span>
-            )}
-            {!!facebook && (
-              <span>
-                <a href={facebook}>
-                  <img src={iconFb} alt="facebook" />
-                </a>
-              </span>
-            )}
-          </div>
+          <Social facebook={facebook} instagram={instagram} />
         </div>
       </div>
     </div>
   )
 }
+
+export const Social = ({ facebook, instagram }) => {
+  return (
+    <div className="social">
+      {!!instagram && (
+        <span>
+          <a href={instagram}>
+            <img src={iconIg} alt="instagram" />
+          </a>
+        </span>
+      )}
+      {!!facebook && (
+        <span>
+          <a href={facebook}>
+            <img src={iconFb} alt="facebook" />
+          </a>
+        </span>
+      )}
+    </div>
+  )
+}
+
+
+export default Footer
