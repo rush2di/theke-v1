@@ -597,17 +597,18 @@ body {
 	.aside-box {
 		background: #dcdcdc;
 		border: 1px solid #cacaca;
-		height: 450px;
+		height: 530px;
 		border-radius: 0.3rem;
 		color: $txt-second-color-darker;
 		font-size: 14px;
 		grid-column: 3;
-		margin-top: 2rem;
+		margin: 2rem 0 1rem;
 		position: sticky;
 		top: 1rem;
 		.aside-box_tags,
 		.aside-box_recent,
-		.aside-box_search {
+		.aside-box_search,
+		.aside-box_social {
 			@include aside-items();
 		}
 
@@ -639,6 +640,9 @@ body {
 					width: 1.3rem;
     				margin-right: 1rem;
 				}
+			a:hover {
+				opacity: .7;
+			}
 			}
 		}
 	}
@@ -652,14 +656,19 @@ body {
 	}
 
 	.aside-box_search {
+		width: 75%;
+    	position: relative;
 		.react-autosuggest__input {
 			padding: 0.3rem;
 			border-radius: 0.3rem;
 			border: 1px solid #cacaca;
-			width: 85%;
+			width: 100%;
 		}
 		.react-autosuggest__suggestions-container {
 			background: white;
+			width: 100%;
+		    position: absolute;
+		    z-index: 5;
 			width: 85%;
 			border-right: 1px solid #e0e0e0;
 			border-left: 1px solid #e0e0e0;
