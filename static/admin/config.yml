@@ -99,7 +99,7 @@ collections:
     create: false
     slug: "a-propos"
     editor: 
-      preview: false
+      preview: true
     fields:
       - {
         name: "templateKey",

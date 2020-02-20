@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react"
 import Autosuggest from "react-autosuggest"
 import { Link, navigate } from "gatsby"
-import { InfoContext } from "./infoContext"
+import { InfoContext } from "../context/infoContext"
 import { Social } from "./footer"
 
 const Aside = ({ posts }) => {
@@ -17,8 +17,6 @@ const Aside = ({ posts }) => {
 
   const { informations } = useContext(InfoContext)
   const { facebook, instagram } = informations
-
-  console.log(facebook,instagram)
 
   return (
     <div className="aside-box">
@@ -37,12 +35,11 @@ const Aside = ({ posts }) => {
         <SearchBar posts={posts} />
       </div>
       {!!instagram && (
-          <div className="aside-box_social">
-            <span>suivez nous sur</span>
-            <Social facebook={facebook} instagram={instagram} />
-          </div>
-        )
-      }
+        <div className="aside-box_social">
+          <span>suivez nous sur</span>
+          <Social facebook={facebook} instagram={instagram} />
+        </div>
+      )}
     </div>
   )
 }

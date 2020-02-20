@@ -805,7 +805,7 @@ body {
 			grid-row-gap: 2rem;
 		}
 	}
-	@include media("<=900px",">phoneL") {
+	@include media("<=900px", ">phoneL") {
 		.grid-table .about-img {
 			width: 95% !important;
 			height: 250px !important;
@@ -817,7 +817,7 @@ body {
 			margin-bottom: 1rem;
 		}
 		.grid-table {
-			grid-template-rows: .5fr 1fr;
+			grid-template-rows: 0.5fr 1fr;
 			grid-column-gap: 0;
 			grid-row-gap: 0.5rem;
 			grid-template-areas:
@@ -837,9 +837,9 @@ body {
 		}
 	}
 	@include media("<=phoneL") {
-		.grid-table .about-img {			
+		.grid-table .about-img {
 			width: 95% !important;
-			height: 200px !important;			
+			height: 200px !important;
 			margin: 0 0 !important;
 		}
 	}

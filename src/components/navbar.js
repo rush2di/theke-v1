@@ -52,9 +52,7 @@ const Navbar = ({ activeNavItem2, activeNavItem1 }) => {
           </span>
         </button>
         <div className={`nav_small-vp--items ${!!state ? "--active" : ""}`}>
-          <ul
-            onWheel={resetNav}
-          >
+          <ul onWheel={resetNav}>
             <li>
               <Link
                 className={activeNavItem1 === true ? "active" : ""}

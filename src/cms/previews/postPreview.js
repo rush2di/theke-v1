@@ -36,7 +36,6 @@ class PostPreview extends Component {
 	}
 
 	render() {
-		console.log(this.props.widgetFor('body'))
 		return (
 			<React.Fragment>
 				<div className="article_wrapper">
@@ -47,9 +46,7 @@ class PostPreview extends Component {
 						/>
 						<h3>{this.props.entry.getIn(["data", "titre"])}</h3>
 					</div>
-					<div className="article_body">
-						{this.props.widgetFor('body')}
-					</div>
+					<div className="article_body">{this.props.widgetFor("body")}</div>
 				</div>
 			</React.Fragment>
 		)

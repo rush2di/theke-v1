@@ -3,17 +3,11 @@ import thekeLogo from "../../static/thekeLogo.svg"
 import { Link } from "gatsby"
 import iconFb from "../../static/assets/facebook.svg"
 import iconIg from "../../static/assets/instagram.svg"
-import { InfoContext } from "./infoContext"
+import { InfoContext } from "../context/infoContext"
 
 const Footer = props => {
   const { informations } = useContext(InfoContext)
-  const {
-    aproposMini,
-    email,
-    telephone,
-    facebook,
-    instagram,
-  } = informations
+  const { aproposMini, email, telephone, facebook, instagram } = informations
 
   return (
     <FooterLayoutPreview
@@ -32,7 +26,10 @@ export const FooterLayoutPreview = ({
   email,
   instagram,
   facebook,
+  preview,
 }) => {
+  const previewCheck = !!preview || <Link to="/apropos">savoirs plus</Link>
+
   return (
     <div className="footer">
       <div className="fgrid">
@@ -44,7 +41,7 @@ export const FooterLayoutPreview = ({
           <p>
             {apropos}
             <br />
-            <Link to="/apropos">savoirs plus</Link>
+            {previewCheck}
           </p>
         </div>
         <div className="contact">
@@ -78,6 +75,5 @@ export const Social = ({ facebook, instagram }) => {
     </div>
   )
 }
-
 
 export default Footer

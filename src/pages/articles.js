@@ -2,7 +2,7 @@ import React from "react"
 import { ArticlePageLayout } from "../templates/articlePage"
 import { graphql, useStaticQuery } from "gatsby"
 import { Helmet } from "react-helmet"
- 
+
 const Articles = props => {
   const data = useStaticQuery(graphql`
     {
@@ -41,10 +41,7 @@ const Articles = props => {
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:title" content={"Articles | Theke"} />
-        <meta
-          property="og:description"
-          content={"Theke page des articles"}
-        />
+        <meta property="og:description" content={"Theke page des articles"} />
       </Helmet>
       <ArticlePageLayout data={data.allMarkdownRemark} />
     </React.Fragment>

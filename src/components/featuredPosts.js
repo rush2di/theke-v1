@@ -58,13 +58,7 @@ const FeaturedPosts = ({ posts }) => {
 
 export default FeaturedPosts
 
-export const PostsBoxs = ({
-  titre,
-  description,
-  coverture,
-  slug,
-  type,
-}) => {
+export const PostsBoxs = ({ titre, description, coverture, slug, type }) => {
   return (
     <Link to={`/article${slug}`}>
       <div

@@ -45,8 +45,8 @@ const BlogPost = props => {
             dangerouslySetInnerHTML={{ __html: html }}
           />
           <div className="article_share">
-            <span>partager l'article</span> 
-            <ShareButtons slug={slug} />
+            <span>partager l'article</span>
+            <ShareButtons slug={slug} titre={titre} />
           </div>
           <div className="article_relative">
             <RelativePosts title={titre} targetTags={tags} />
@@ -59,14 +59,14 @@ const BlogPost = props => {
 
 export default BlogPost
 
-export const ShareButtons = ({slug}) => {
+export const ShareButtons = ({ slug, titre }) => {
   return (
     <React.Fragment>
       <a
         className="resp-sharing-button__link"
         href={`https://facebook.com/sharer/sharer.php?u=https://theke.netlify.com/article${slug}`}
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
         aria-label="Facebook"
       >
         <div className="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--medium">
@@ -85,7 +85,7 @@ export const ShareButtons = ({slug}) => {
         className="resp-sharing-button__link"
         href={`https://twitter.com/intent/tweet/?url=url=https://theke.netlify.com/article${slug}`}
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
         aria-label="Twitter"
       >
         <div className="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--medium">
@@ -102,9 +102,9 @@ export const ShareButtons = ({slug}) => {
       </a>
       <a
         className="resp-sharing-button__link"
-        href={`https://www.linkedin.com/shareArticle?mini=true&amp;url=source=https://theke.netlify.com/article${slug}&amp;source=https://theke.netlify.com`}
+        href={`https://www.linkedin.com/shareArticle?mini=true&url=https://theke.netlify.com/article${slug}&title=${titre}`}
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
         aria-label="LinkedIn"
       >
         <div className="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--medium">
