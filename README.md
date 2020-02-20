@@ -1,5 +1,6 @@
 # Theke `v1.0`
-a JAMstack science research blog built with **GatsbyJs** and **Netlify-CMS** combined to insure ***fast performance*** and ***scalability***.  
+This is Theke’s website source code.  
+a JAMstack science research blog built with **GatsbyJs** and **Netlify-CMS** combined to insure ***fast performance*** and ***easy scalability***.  
   
 **The Design**  
 beautiful responsive modern design  
