@@ -822,9 +822,9 @@ body {
 			text-align: center;
 			z-index: 5;
 		}
-	}
 
-	.article_head--bg {
+
+	&--bg {
 		height: 450px;
 		width: 100%;
 		background-size: cover;
@@ -832,13 +832,23 @@ body {
 		position: relative;
 	}
 
-	.article_head--bg::after {
+	&--bg::after {
 		content: "";
 		position: absolute;
 		top: 0;
 		height: 100%;
 		width: 100%;
 		background: #0000009e;
+	}
+		@include media("<=phoneL") {
+			&--bg {
+				height: 250px
+			}
+			h3 {
+				top: 42%;
+				font-size: 2rem;
+			}
+		}
 	}
 
 	.resp-sharing-button__link,
@@ -915,6 +925,9 @@ body {
 		margin: 1.5rem 1rem 0;
 		padding-bottom: 1.5rem;
 		line-height: 1.6;
+		@include media("<=phoneL") {
+			margin: 1.5rem 0 0;
+		}
 		pre {
 			margin-bottom: 1rem;
 		}
@@ -1022,9 +1035,21 @@ body {
 	    justify-content: flex-end;
 	    padding-bottom: 1.5rem;
 	    font-size: .90rem;
-	    color: #616161;
-	    font-weight: 500;
 	    border-bottom: 2px solid lightgray;
+	    span {
+	    	color: $txt-prim-color;
+		    font-size: .85rem;
+		    font-weight: 600;
+		    margin-right: .5rem;
+	    }
+	    @include media("<=phoneL") {
+	    	margin: 0 0;
+	    	flex-wrap: wrap;
+	    	justify-content: normal;
+	    	a:last-of-type {
+	    		margin: .5rem 0;
+	    	}
+	    }
 	}
 	.article_relative {
 		margin: 0 1rem;
