@@ -925,7 +925,7 @@ body {
 		margin: 1.5rem 1rem 0;
 		padding-bottom: 1.5rem;
 		line-height: 1.6;
-		@include media("<=phoneL") {
+		@include media("<=530px") {
 			margin: 1.5rem 0 0;
 		}
 		pre {
@@ -1042,12 +1042,12 @@ body {
 		    font-weight: 600;
 		    margin-right: .5rem;
 	    }
-	    @include media("<=phoneL") {
-	    	margin: 0 0;
+	    @include media("<=530px") {
+	    	margin: 0 0; 
 	    	flex-wrap: wrap;
 	    	justify-content: normal;
-	    	a:last-of-type {
-	    		margin: .5rem 0;
+	    	a {
+	    		margin: 0.5rem 0.5rem 0.5rem 0;
 	    	}
 	    }
 	}
