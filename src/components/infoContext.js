@@ -25,9 +25,7 @@ const InfoContextProvider = props => {
 			}
 		}
 	`)
-
 	const {informations} = info.allMarkdownRemark.edges[0].node.frontmatter
-	console.log(informations)
 	
 	return (
 		<InfoContext.Provider value={{ informations }}>

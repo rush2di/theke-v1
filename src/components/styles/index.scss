@@ -638,11 +638,11 @@ body {
 				@include social();
 				span {
 					width: 1.3rem;
-    				margin-right: 1rem;
+					margin-right: 1rem;
 				}
-			a:hover {
-				opacity: .7;
-			}
+				a:hover {
+					opacity: 0.7;
+				}
 			}
 		}
 	}
@@ -657,7 +657,7 @@ body {
 
 	.aside-box_search {
 		width: 75%;
-    	position: relative;
+		position: relative;
 		.react-autosuggest__input {
 			padding: 0.3rem;
 			border-radius: 0.3rem;
@@ -667,8 +667,8 @@ body {
 		.react-autosuggest__suggestions-container {
 			background: white;
 			width: 100%;
-		    position: absolute;
-		    z-index: 5;
+			position: absolute;
+			z-index: 5;
 			border-right: 1px solid #e0e0e0;
 			border-left: 1px solid #e0e0e0;
 		}
@@ -697,6 +697,13 @@ body {
 		justify-content: center;
 		color: #7a7a7a;
 		margin-bottom: 1rem;
+		a {
+			font-weight: 500;
+			text-decoration: none;
+			&:hover {
+				text-decoration: none !important;
+			}
+		}
 		.pagination_number {
 			margin: 0 0.5rem;
 			ul {
@@ -706,28 +713,26 @@ body {
 			li {
 				margin: 0.2rem;
 			}
-			a {
-				font-weight: 500;
-				text-decoration: none;
-			}
 			.active-link {
 				.pagination_number--box {
-					background: #717171;
-					color: white;
-					border-color: #4e4e4e;
+					background: #616161;
+				    color: white;
+				    border-color: #4e4e4e;
 				}
 			}
 			&--box {
-				border: 1px solid #7d7d7d;
+				border: 1px solid #cacaca;
 				width: 2rem;
 				height: 2rem;
 				border-radius: 0.2rem;
 				display: flex;
 				align-items: center;
 				color: $txt-second-color-darker;
+				background: #e4e4e4;
 				justify-content: center;
 				&:hover {
-					background: $footer-bg;
+					background: #cacaca;
+					color: #4e4e4e;
 				}
 			}
 		}
@@ -737,11 +742,7 @@ body {
 			margin: -2.2rem auto 0;
 			height: 20px;
 			width: 12px;
-			color: #757575;
 			text-decoration: none;
-		}
-		.arrow:hover {
-			color: #4e4e4e;
 		}
 	}
 }
@@ -807,7 +808,6 @@ body {
 //////////////////////////////////////////////////////////////////
 
 .article_wrapper {
-	margin-bottom: 5rem;
 
 	.article_head {
 		position: relative;
@@ -880,67 +880,41 @@ body {
 		stroke: none;
 	}
 
-	.resp-sharing-button--twitter {
-		background-color: #55acee;
-	}
-
-	.resp-sharing-button--twitter:hover {
-		background-color: #2795e9;
-	}
-
-	.resp-sharing-button--facebook {
-		background-color: #3b5998;
-	}
-
-	.resp-sharing-button--facebook:hover {
-		background-color: #2d4373;
-	}
-
-	.resp-sharing-button--linkedin {
-		background-color: #0077b5;
-	}
-
-	.resp-sharing-button--linkedin:hover {
-		background-color: #046293;
-	}
-
-	.resp-sharing-button--facebook {
-		background-color: #3b5998;
-		border-color: #3b5998;
-	}
-
-	.resp-sharing-button--facebook:hover,
-	.resp-sharing-button--facebook:active {
-		background-color: #2d4373;
-		border-color: #2d4373;
-	}
-
-	.resp-sharing-button--twitter {
-		background-color: #55acee;
-		border-color: #55acee;
-	}
-
-	.resp-sharing-button--twitter:hover,
-	.resp-sharing-button--twitter:active {
-		background-color: #2795e9;
-		border-color: #2795e9;
-	}
-
-	.resp-sharing-button--linkedin {
-		background-color: #0077b5;
-		border-color: #0077b5;
-	}
-
-	.resp-sharing-button--linkedin:hover,
-	.resp-sharing-button--linkedin:active {
-		background-color: #046293;
-		border-color: #046293;
+	.resp-sharing-button {
+		font-size: 0.85rem;
+		&--twitter {
+			background-color: #55acee;
+			border-color: #55acee;
+		}
+		&--twitter:hover,
+		&--twitter:active {
+			background-color: #2795e9;
+			border-color: #2795e9;
+		}
+		&--facebook {
+			background-color: #3b5998;
+			border-color: #3b5998;
+		}
+		&--facebook:active,
+		&--facebook:hover {
+			background-color: #2d4373;
+			border-color: #2d4373;
+		}
+		&--linkedin {
+			background-color: #0077b5;
+			border-color: #0077b5;
+		}
+		&--linkedin:hover,
+		&--linkedin:active {
+			background-color: #046293;
+			border-color: #046293;
+		}
 	}
 
 	.article_body {
-		margin: 1.5rem 1rem;
+		margin: 1.5rem 1rem 0;
+		padding-bottom: 1.5rem;
 		line-height: 1.6;
-
 		pre {
 			margin-bottom: 1rem;
 		}
@@ -1039,6 +1013,23 @@ body {
 		a {
 			color: #2d7ee2;
 			font-weight: 400;
+		}
+	}
+	.article_share {
+		margin: 0 1rem;
+	    display: flex;
+	    align-items: center;
+	    justify-content: flex-end;
+	    padding-bottom: 1.5rem;
+	    font-size: .90rem;
+	    color: #616161;
+	    font-weight: 500;
+	    border-bottom: 2px solid lightgray;
+	}
+	.article_relative {
+		margin: 0 1rem;
+		.featured-posts {
+			margin: 1.5rem 0 !important;
 		}
 	}
 }

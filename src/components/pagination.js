@@ -7,19 +7,19 @@ const Pagination = ({ first, last, index, pageCount }) => {
 	return (
 		<div className="pagination">
 			{!!first || (
-				<div className="pagination_number--box">
-					<Link className="arrow" to={prevPageLogic}>
-						&#8249;
-					</Link>
-				</div>
+				<Link to={prevPageLogic}>
+					<div className="pagination_number--box">
+						<div className="arrow">&#8249;</div>
+					</div>
+				</Link>
 			)}
 			<PageNums index={index} pageCount={pageCount} />
 			{!!last || (
-				<div className="pagination_number--box">
-					<Link className="arrow" to={secPageLogic}>
-						&#8250;
-					</Link>
-				</div>
+				<Link to={secPageLogic}>
+					<div className="pagination_number--box">
+						<div className="arrow">&#8250;</div>
+					</div>
+				</Link>
 			)}
 		</div>
 	)

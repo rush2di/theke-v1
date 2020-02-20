@@ -48,7 +48,7 @@ const FeaturedPosts = ({ posts }) => {
               description={description}
               coverture={coverture}
               slug={slug}
-              featured={true}
+              type={"en vedette"}
             />
           )
         })}
@@ -63,7 +63,7 @@ export const PostsBoxs = ({
   description,
   coverture,
   slug,
-  featured,
+  type,
 }) => {
   return (
     <Link to={`/article${slug}`}>
@@ -77,7 +77,7 @@ export const PostsBoxs = ({
           })`,
         }}
       >
-        {!!featured && <span>featured post</span>}
+        {!!type && <span>{type}</span>}
         <div className="over-box">
           <h3>{titre}</h3>
           <p>{description}</p>

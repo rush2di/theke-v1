@@ -52,9 +52,6 @@ const RelativePosts = ({ targetTags, title }) => {
   return (
     !!postsArr.length && (
       <div>
-        <h3>
-          {postsArr.length > 1 ? "Articles Similaires" : "Article Similaire"}
-        </h3>
         <div className="featured-posts">
           {postsArr.map(post => {
             const { titre, description, coverture } = post.node.frontmatter
@@ -66,6 +63,7 @@ const RelativePosts = ({ targetTags, title }) => {
                 description={description}
                 coverture={coverture}
                 slug={slug}
+                type={"article similaire"}
               />
             )
           })}

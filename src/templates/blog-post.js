@@ -44,7 +44,8 @@ const BlogPost = props => {
             className="article_body"
             dangerouslySetInnerHTML={{ __html: html }}
           />
-          <div>
+          <div className="article_share">
+            <span>partager l'article</span> 
             <ShareButtons slug={slug} />
           </div>
           <div className="article_relative">
