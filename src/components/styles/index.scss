@@ -191,7 +191,6 @@ body {
 				z-index: 10;
 				height: calc(100vh - 3.5rem);
 				width: 50vw;
-				overflow: hidden;
 				transform: translateX(20rem);
 				right: 0;
 				opacity: 0;
@@ -215,7 +214,7 @@ body {
 			justify-content: space-around;
 			align-items: center;
 			background: #ffffff;
-			box-shadow: 0px 27px 20px -20px #00000080;
+			box-shadow: -2px 12px 10px 0px #00000082;
 			li {
 				font-family: "Muli", sans-serif;
 				font-weight: 700;
@@ -232,13 +231,6 @@ body {
 			padding: 15px 0;
 		}
 	}
-	// @include media("<=tablet") {
-	// 	.nav_small-vp--items {
-	// 		width: calc(100% + 2rem);
-	// 		margin: 0 -1rem;
-	// 	}
-
-	// }
 }
 
 //////////////////////////////////////////////////////////////////
@@ -1099,6 +1091,10 @@ body {
 	.active:hover {
 		color: #1899ff;
 	}
+
+	@include media("<=530px") {
+		padding: 1rem 0rem;
+	}
 }
 
 .articles_msg {
@@ -1109,6 +1105,9 @@ body {
 	color: $txt-second-color;
 	@include media("<=tablet") {
 		margin: 5rem 1rem 0;
+		ul li {
+			margin: .15rem .3rem;
+		}
 	}
 }
 
