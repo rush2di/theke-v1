@@ -477,7 +477,7 @@ body {
 	display: grid;
 	margin-bottom: 5rem;
 	margin: 0 2rem;
-	grid-template-columns: 3fr 0.55fr 1fr;
+	grid-template-columns: 3fr 0.35fr 1.2fr;
 
 	//////////////////////////////////////////////////////////////////
 	//// II - Home ////  1 - Blog Posts Styles ///////////////////////
@@ -550,10 +550,10 @@ body {
 		}
 	}
 
-	@include media("<1200px") {
-		grid-gap: 3.5rem;
+	@include media("<1000px") {
+		grid-gap: 2.5rem;
 		margin: 0 1rem;
-		grid-template-columns: 3fr 1fr;
+		grid-template-columns: 2.3fr 1fr;
 		.postcard .postcard_img {
 			height: 370px;
 		}
