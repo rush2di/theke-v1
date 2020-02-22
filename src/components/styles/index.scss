@@ -51,7 +51,7 @@ body {
 		}
 
 		a:hover {
-			color: $txt-second-color;
+			color: #9a9a9a;
 		}
 
 		@include media(">tablet") {
@@ -254,6 +254,7 @@ body {
 .footer {
 	background: $footer-bg;
 	width: 100%;
+	border-top: 1px solid #cacaca;
 
 	.fgrid {
 		@include container($main: false);
@@ -359,11 +360,11 @@ body {
 	justify-content: center;
 
 	.post-box {
-		transition: $easingOut;
+		transition: $easingElasticStart;
 		transform: scale(1);
 		background-size: cover;
 		width: 100%;
-		box-shadow: 0px 2px 10px #000000c7;
+		box-shadow: 0 5px 15px -3px #282231d9;
 		height: 17rem;
 		overflow: hidden;
 		border-radius: 0.35rem;
@@ -371,7 +372,7 @@ body {
 	}
 	.post-box:hover {
 		transform: scale(1.035);
-		box-shadow: 0px 5px 15px #0000007d;
+		box-shadow: 0 5px 15px -2px #28223196;
 	}
 	.post-box:after {
 		content: "";
@@ -587,7 +588,7 @@ body {
 	//////////////////////////////////////////////////////////////////
 
 	.aside-box {
-		background: #dcdcdc;
+		background: $footer-bg;
 		border: 1px solid #cacaca;
 		height: 530px;
 		border-radius: 0.3rem;
