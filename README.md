@@ -12,3 +12,6 @@ beautiful responsive modern design
  - Sass
  - Netlify-Cms
  - NodeJs
+ 
+**License:**
+ - MIT License
