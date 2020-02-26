@@ -41,8 +41,8 @@ class PostPreview extends Component {
 				<div className="article_wrapper">
 					<div className="article_head">
 						<div
-							className="article_head--bg"
-							style={{ backgroundImage: `url(${this.state.src})` }}
+						    className="article_head--bg"
+						    style={{ backgroundImage: `url(${this.state.src})` }}
 						/>
 						<h3>{this.props.entry.getIn(["data", "titre"])}</h3>
 					</div>
