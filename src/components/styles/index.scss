@@ -378,7 +378,7 @@ body {
 		content: "";
 		width: 100%;
 		height: 100%;
-		background: linear-gradient(0deg, black, #4e4e4ef0 40%, #7a7a7a52 60%);
+		background: linear-gradient(0deg, black, #4e4e4ef0 45%, #7a7a7a52 60%);
 		position: absolute;
 		top: 0;
 		border-radius: 0.35rem;
@@ -406,18 +406,19 @@ body {
 		}
 
 		p {
-			font-size: 0.8rem;
-			color: lightgray;
-			line-height: 1.4;
-			display: block;
-			overflow: hidden;
-			white-space: nowrap;
-			text-overflow: ellipsis;
+			font-size: .8rem;
+		    	color: #b7b7b7;
+		    	line-height: 1.75;
+		    	overflow: hidden;
+		    	text-overflow: ellipsis;
+		    	display: -webkit-box;
+		    	-webkit-line-clamp: 2;
+		    	-webkit-box-orient: vertical;
 		}
 	}
 	span {
 		position: absolute;
-		background: #4e4e4e;
+		background: #de3c38;
 		color: white;
 		padding: 0.5rem 1.5rem;
 		font-size: 0.85rem;
