@@ -11,7 +11,7 @@ description: >-
 tags:
   - science
   - literature
-  - astrologie
+  - astronomie
 coverture: /img/eren-arik-research.jpg
 ---
 # lorem ipsum
