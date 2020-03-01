@@ -8,7 +8,7 @@ export const ArticlePageLayout = ({ data }) => {
 const tags = [
 	"science",
 	"biologie",
-	"astrologie",
+	"astronomie",
 	"literature",
 	"physcique",
 	"chimie",
