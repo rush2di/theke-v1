@@ -75,7 +75,7 @@ exports.createPages = ({ actions, graphql }) => {
         const tags = [
             "science",
             "biologie",
-            "astrologie",
+            "astronomie",
             "literature",
             "physcique",
             "chimie",
