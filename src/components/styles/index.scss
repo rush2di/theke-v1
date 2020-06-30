@@ -604,6 +604,8 @@ body {
 		margin: 1rem 0;
 		position: sticky;
 		top: 1rem;
+		min-width: 200px;
+    		max-width: 340px;
 		.aside-box_tags,
 		.aside-box_recent,
 		.aside-box_search,
