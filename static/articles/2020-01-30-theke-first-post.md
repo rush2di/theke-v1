@@ -9,7 +9,7 @@ tags:
   - culture
   - décoverte
   - société
-coverture: /img/hal-gatewood-OgvqXGL7XO4-unsplash.jpg
+coverture: /img/16167793.jpg
 ---
 # Un temple mystérieux qui alimente toutes les théories
 
