@@ -12,7 +12,7 @@ description: >-
 tags:
   - technologie
   - exploration
-coverture: /img/eren-arik-research.jpg
+coverture: /img/000807309_illustration_large.jpg
 ---
 # SpaceX pousse la Nasa à se servir du Starship
 
